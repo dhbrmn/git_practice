@@ -6,6 +6,7 @@ namespace TrueOrFalse
     {
         static void Main(string[] args)
         {
+            //Make whole app run with a single method RunQuiz(questions[], answers[])
             // Do not edit these lines
             Console.WriteLine("Welcome to 'True or False?'\nPress Enter to begin:");
             string entry = Console.ReadLine();
