@@ -22,8 +22,11 @@ namespace TrueOrFalse
                 Console.WriteLine("Error 101: Strings unequal length!");
             }
 
-            //foreach question loop
+            //foreach loop
             int askingIndex = 0;
+            int score = 0;
+
+
             foreach (string question in questions)
             {
                 /*print question take answer*/
@@ -41,9 +44,24 @@ namespace TrueOrFalse
                 }
                 
                     responses[askingIndex] = inputBool;
-                        ++askingIndex;
+                        
+
+                bool ans = answers[askingIndex];
+                bool res = responses[askingIndex];
+                int questionNumber = askingIndex + 1;
+                Console.WriteLine($"{questionNumber}. Input: {res} | Answer: {ans}");
+
+                if (ans == res)
+                {
+                    score++;
+                }
+
+                Console.WriteLine($"You got {score} out of {questionNumber} correct!");
+                ++askingIndex;
+
             }
 
+            Console.WriteLine($"You managed to get {score} out of 5 correct!");
         }
     }
 }
