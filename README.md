@@ -2,9 +2,11 @@
 
 This is a practice repository while I'm learning to code and use Git (and GitHub).
 
->So far I have started learning some basics of **C#**<br>
->And basics on how to use **Git** and **GitHub**<br>
->Yes, I've also tried some **Markdown** editing.<br>
+* I have started learning some basics of _C#_ as my first programming language on Feb 12, 2023
+* I also learned the basics on how to use _Git_ and _GitHub_
+* So while I was doing that I sort off picked up some knowledge of _Markdown_
+* As a part of a portfolio project on Codecademy I was tasked to show my understanding of _Git_ by contributing to the Codecademy Docs through their official repository
+* I finished and pulled the Caesar's Cipher task into the practice repository - Feb 21, 2023
 
 Anyway, I'll keep you guys posted on how I progress through my learning journey.
 
