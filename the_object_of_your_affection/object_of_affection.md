@@ -27,7 +27,7 @@ Tasks:
 * `age`
 * `city`
 * `country`
-* `pronouns` (give this a default value of "they/them" just in case it’s ever left blank)
+* `pronouns` (give this a default value of "they/them" just in case it's ever left blank)
 
 Define the constructor in ***Profile.cs*** and set the fields to the values passed in. Make sure to also set `hobbies` to an empty array of strings.
 
@@ -46,7 +46,7 @@ Then run your code.
 * a return type of `string`
 * no parameters
 
-It should return a string containing all of the profile’s information.
+It should return a string containing all of the profile's information.
 
 - [x] In `Main()`, test out the new method on `sam` and print out the result.
 - [x] In ***Profile.cs***, declare a new method `SetHobbies()` with:
@@ -57,17 +57,17 @@ It should return a string containing all of the profile’s information.
 
 In the method body, set the field `this.hobbies` equal to the `hobbies` argument.
 
-- [x] Go back into `ViewProfile()` and modify the method so that you display a profile’s hobbies.
-- [x] Above where you print `sam`‘s profile information out, add some hobbies to `sam`:
+- [x] Go back into `ViewProfile()` and modify the method so that you display a profile's hobbies.
+- [x] Above where you print `sam`'s profile information out, add some hobbies to `sam`:
 
-* “listening to audiobooks and podcasts”
-* “playing rec sports like bowling and kickball”
-* “writing a speculative fiction novel”
-* “reading advice columns”
+* "listening to audiobooks and podcasts"
+* "playing rec sports like bowling and kickball"
+* "writing a speculative fiction novel"
+* "reading advice columns"
 
 - [x] Here are a few suggestions to make the `Profile` class even better:
 
-* If you call `ViewProfile()` before calling `SetHobbies()`, you’ll get an error because the `hobbies` field isn’t set to any value. Fix the class so that you can call `ViewProfile()` without adding hobbies.
+* If you call `ViewProfile()` before calling `SetHobbies()`, you'll get an error because the `hobbies` field isn't set to any value. Fix the class so that you can call `ViewProfile()` without adding hobbies.
 * Convert the fields into private properties and add validation. For example, users must be at least 18 years of age.
 * Some users may create a profile with just a name and age. Use optional parameters or create a constructor overload to handle those issues.
 
