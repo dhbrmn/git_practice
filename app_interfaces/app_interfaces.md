@@ -36,7 +36,7 @@ Declare that it implements `IDisplayable`.
 
 In **Program.cs**, call `Display()` on `tdl` and `pm`. Run the program with:
 
-> dotnet run
+<code>dotnet run</code>
 
 You should see both objects printed to the console.
 
@@ -59,21 +59,21 @@ You should see both objects printed to the console.
 
 Run the program with:
 
-> dotnet run
+<code>dotnet run</code>
 
 - [x] Well done! The Computron is a better computer thanks to your work. If you’d like extra practice, try these optional challenges:
 
 Add a get-only property to `IDisplayable` called `HeaderSymbol`. This should be used in `Display()` as a header. For example, if the header symbol is -, then the apps should be displayed as:
 
-> Todos
-> \--------
-> Eat
-> Sleep
-> Code
-> 
-> Password
-> \-----------
-> \***
+    Todos
+    --------
+    Eat
+    Sleep
+    Code
+    
+    Password
+    -----------
+    ***
 
 If you add more than five to-dos to the `TodoList`, it throws an error! Extend the `Add()` method so that it doesn’t add any more than five items to the `Todos` array.
 
