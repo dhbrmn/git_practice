@@ -61,23 +61,23 @@ Run the program with:
 
 > dotnet run
 
-- [x] Well done! The Computron is a better computer thanks to your work. If you’d like extra practice, try these optional challenges:
+- [x] Well done! The Computron is a better computer thanks to your work. If youâ€™d like extra practice, try these optional challenges:
 
 Add a get-only property to `IDisplayable` called `HeaderSymbol`. This should be used in `Display()` as a header. For example, if the header symbol is -, then the apps should be displayed as:
 
 > Todos
-> --------
+> \--------
 > Eat
 > Sleep
 > Code
 > 
 > Password
-> -----------
-> ***
+> \-----------
+> \***
 
-If you add more than five to-dos to the `TodoList`, it throws an error! Extend the `Add()` method so that it doesn’t add any more than five items to the `Todos` array.
+If you add more than five to-dos to the `TodoList`, it throws an error! Extend the `Add()` method so that it doesnâ€™t add any more than five items to the `Todos` array.
 
-Currently a blank line is printed for each empty index in `Todos`. Change `Display()` in `TodoList` so that it prints `[]` instead of a blank line. You’ll need to use the static method `String.IsNullOrEmpty()`.
+Currently a blank line is printed for each empty index in `Todos`. Change `Display()` in `TodoList` so that it prints `[]` instead of a blank line. Youâ€™ll need to use the static method `String.IsNullOrEmpty()`.
 
 Add a method `ChangePassword()` to `PasswordManager`. It should:
 
