@@ -4,8 +4,23 @@ namespace SavingInterface
 {
     class PasswordManager : IDisplayable, IResetable
     {
+        private string password;
+
+
         private string Password
-        { get; set; }
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                if (value.Length >= 8)
+                {
+                    password = value;
+                }
+            }
+        }
 
         public bool IsChanged
         { get; private set; }
