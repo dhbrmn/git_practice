@@ -9,7 +9,9 @@ This is a practice repository while I'm learning to code and use Git (and GitHub
 * Finnished and pulled the Exquisite Corpse task into the practice repository - Feb 20, 2023
 * Finished and pulled the Caesar's Cipher task into the practice repository - Feb 21, 2023
 * Finished and pulled the True and False task into the practice repository - Feb 22, 2023
-* Finished and pulled the The Object of Your Affection task into practice repository - Feb 25, 2023
+* Finished and pulled the The Object of Your Affection task into the practice repository - Feb 25, 2023
+* My pull request at the Codecademy repository was successfully merged into the main branch. You can check out my countribution [here](https://www.codecademy.com/resources/docs/c-sharp/math-functions/pow) - Feb 27, 2023
+* Finished and pulled the App Interfaces task into the practice repository - Feb 28, 2023
 
 Anyway, I'll keep you guys posted on how I progress through my learning journey.
 
