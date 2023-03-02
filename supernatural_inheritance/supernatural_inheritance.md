@@ -79,7 +79,7 @@ This time it is a strong lightning storm cast by the archmage.
 
 After constructing a new object, call  `CastRainStorm()`  and  `CastLightningStorm()`  and store the results in variables. Use  `Announce()`  to make sure they are correct!
 
-- [ ] Well done! You’ve created four new classes. Three of them are in an inheritance hierarchy:  `Archmage`  inherits from  `Mage`, which inherits from  `Pupil`. Each class has at least one method that uses the fourth class,  `Storm`.
+- [x] Well done! You’ve created four new classes. Three of them are in an inheritance hierarchy:  `Archmage`  inherits from  `Mage`, which inherits from  `Pupil`. Each class has at least one method that uses the fourth class,  `Storm`.
 
 If you’d like more practice, try these optional challenges:
 
