@@ -21,22 +21,28 @@ namespace MagicalInheritance
             get; private set;
         }
 
-        public Storm( string essence, bool isStrong, string caster )
+        public string Home
+        {
+            get; private set;
+        }
+
+        public Storm( string essence, bool isStrong, string caster, string home )
         {
             Essence = essence.ToLower();
             IsStrong = isStrong;
             Caster = caster;
+            Home = home;
         }
 
         public string Announce()
         {
             if (IsStrong == true)
             {
-                return $"{Caster} cast a strong {Essence} storm!";
+                return $"{Caster} from {Home} cast a strong {Essence} storm!";
             }
             else
             {
-                return $"{Caster} cast a weak {Essence} storm.";
+                return $"{Caster} from {Home} cast a weak {Essence} storm.";
             }
         }
 

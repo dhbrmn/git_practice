@@ -10,14 +10,21 @@ namespace MagicalInheritance
             get; protected set;
         }
 
-        public Pupil( string title )
+        public string Origin
+        {
+            get; protected set;
+        }
+
+
+        public Pupil( string title, string origin )
         {
             Title = title;
+            Origin = origin;
         }
 
         public Storm CastWindStorm()
         {
-            Storm windStorm = new Storm("wind", false, Title);
+            Storm windStorm = new Storm("wind", false, Title, Origin);
             return windStorm;
         }
     }
