@@ -1,1 +1,7 @@
+namespace RoverControlCenter
+{
+    class Probe
+    {
 
+    }
+}
