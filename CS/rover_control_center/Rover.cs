@@ -1,11 +1,11 @@
 namespace RoverControlCenter
 {
-    class Rover : IDirectable
+    class Rover : Probe /*IDirectable*/
     {
-        public string Alias
+        /*public string Alias
         {
             get; private set;
-        }
+        }*/
 
         public int YearLanded
         {
@@ -18,17 +18,17 @@ namespace RoverControlCenter
             YearLanded = yearLanded;
         }
 
-        public string GetInfo()
+        public override string GetInfo()
         {
             return $"Alias: {Alias}, YearLanded: {YearLanded}";
         }
 
-        public virtual string Explore()
+        public override string Explore()
         {
             return "Rover is exploring the surface!";
         }
 
-        public virtual string Collect()
+        public override string Collect()
         {
             return "Rover is collecting rocks!";
         }
