@@ -13,6 +13,7 @@ This is a practice repository while I'm learning to code and use Git (and GitHub
 * My pull request at the Codecademy repository was successfully merged into the main branch. You can check out my contribution [here](https://www.codecademy.com/resources/docs/c-sharp/math-functions/pow) - Feb 27, 2023
 * Finished and pulled the App Interfaces task into the practice repository - Feb 28, 2023
 * Finished and pulled the Supernatural Inheritance task into the practice repository - Mar 02, 2023
+* Finished and pulled the Rover Control Center task into the practice repository - Mar 04, 2023
 
 Anyway, I'll keep you guys posted on how I progress through my learning journey.
 
