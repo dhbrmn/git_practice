@@ -1,11 +1,11 @@
 namespace RoverControlCenter
 {
-    class Satellite : IDirectable
+    class Satellite : Probe /*IDirectable*/
     {
-        public string Alias
+       /* public string Alias
         {
             get; private set;
-        }
+        }*/
 
         public int YearLaunched
         {
@@ -18,17 +18,17 @@ namespace RoverControlCenter
             YearLaunched = yearLaunched;
         }
 
-        public string GetInfo()
+        public override string GetInfo()
         {
             return $"Alias: {Alias}, YearLaunched: {YearLaunched}";
         }
 
-        public virtual string Explore()
+        public override string Explore()
         {
             return "Satellite is exploring the far reaches of space!";
         }
 
-        public virtual string Collect()
+        public override string Collect()
         {
             return "Satellite is collecting photographic evidence!";
         }
