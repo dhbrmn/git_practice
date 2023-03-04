@@ -14,23 +14,31 @@ namespace RoverControlCenter
             Rover[] rovers = new Rover[] { lunokhod, apollo, sojourner };
             DirectAll(rovers);
 
-            IDirectable[] probes = new IDirectable[] { lunokhod, apollo, sojourner, sputnik };
+          /*IDirectable[] probes = new IDirectable[] { lunokhod, apollo, sojourner, sputnik };
             foreach (IDirectable p in probes)
             {
                 Console.WriteLine(p.GetInfo());
                 Console.WriteLine(p.Explore());
                 Console.WriteLine(p.Collect());
-            }
+            }*/
+            Probe[] probes = new Probe[] {lunokhod, apollo, sojourner, sputnik};
+            foreach (Probe p in probes)
+               {
+                Console.WriteLine(p.GetInfo());
+                Console.WriteLine(p.Explore());
+                Console.WriteLine(p.Collect());
+               }
+
         }
 
-        public static void DirectAll( IDirectable[] probes)
+        public static void DirectAll( /*IDirectable*/Probe[] probes)
         {
-            foreach (IDirectable p in probes)
+            foreach (/*IDirectable*/Probe p in probes)
             {
                 Console.WriteLine(p.GetInfo());
                 Console.WriteLine(p.Explore());
                 Console.WriteLine(p.Collect());
-            }
+            }      
         }
     }
 }
