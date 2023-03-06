@@ -2,6 +2,7 @@
 
 This is a practice repository while I'm learning to code and use Git (and GitHub).
 
+## The Codecademy's Learn C# Course:
 * I have started learning some basics of _C#_ as my first programming language on Feb 12, 2023
 * I also learned the basics on how to use _Git_ and _GitHub_
 * So while I was doing that I sort off picked up some knowledge of _Markdown_
@@ -14,6 +15,10 @@ This is a practice repository while I'm learning to code and use Git (and GitHub
 * Finished and pulled the App Interfaces task into the practice repository - Feb 28, 2023
 * Finished and pulled the Supernatural Inheritance task into the practice repository - Mar 02, 2023
 * Finished and pulled the Rover Control Center task into the practice repository - Mar 04, 2023
+* Finished the Learn C# Course on Codecademy and got a certificate of completition. Hurrah! - Mar 04, 2023
+
+## Learning Series : Beginner Level
+* I have started a new series for myself today. I will be coding begginer level apps in order to raise my skill with C#. Wish me luck :smile: - Mar 06, 2023
 
 Anyway, I'll keep you guys posted on how I progress through my learning journey.
 
