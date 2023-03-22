@@ -6,26 +6,21 @@ using System.Threading.Tasks;
 
 namespace AppLibrary
 {
-    public class NoteModel
+    public class VoiceNoteModel
     {
         public string Title
         {
             get; set;
         }
 
-        public string? Note
+        public object Recording
         {
             get; set;
         }
 
-        public object? Attachment
+        public DateTime TimeOfRecording
         {
             get; set;
-        }
-
-        public DateTime LastEdit
-        {
-            get; set; 
         }
     }
 }
