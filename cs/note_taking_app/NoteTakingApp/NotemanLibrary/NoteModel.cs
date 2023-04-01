@@ -16,7 +16,7 @@ namespace NotemanLibrary
         {
             get; set;
         }
-        public object? Attachment
+        public List<object>? Attachment
         {
             get; set;
         }
