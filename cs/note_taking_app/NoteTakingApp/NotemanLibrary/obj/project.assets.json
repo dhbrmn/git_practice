@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\davor\\git_practice\\cs\\note_taking_app\\NoteTakingApp\\NoteModel\\AppLibrary.csproj",
-      "projectName": "AppLibrary",
-      "projectPath": "C:\\Users\\davor\\git_practice\\cs\\note_taking_app\\NoteTakingApp\\NoteModel\\AppLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\davor\\git_practice\\cs\\note_taking_app\\NoteTakingApp\\NotemanLibrary\\NotemanLibrary.csproj",
+      "projectName": "NotemanLibrary",
+      "projectPath": "C:\\Users\\davor\\git_practice\\cs\\note_taking_app\\NoteTakingApp\\NotemanLibrary\\NotemanLibrary.csproj",
       "packagesPath": "C:\\Users\\davor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\davor\\git_practice\\cs\\note_taking_app\\NoteTakingApp\\NoteModel\\obj\\",
+      "outputPath": "C:\\Users\\davor\\git_practice\\cs\\note_taking_app\\NoteTakingApp\\NotemanLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\davor\\AppData\\Roaming\\NuGet\\NuGet.Config",
