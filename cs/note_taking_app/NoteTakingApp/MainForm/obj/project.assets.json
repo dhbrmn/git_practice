@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "NotemanLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/NotemanLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NotemanLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "NotemanLibrary/1.0.0": {
+      "type": "project",
+      "path": "../NotemanLibrary/NotemanLibrary.csproj",
+      "msbuildProject": "../NotemanLibrary/NotemanLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "NotemanLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\davor\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\davor\\git_practice\\cs\\note_taking_app\\NoteTakingApp\\NotemanLibrary\\NotemanLibrary.csproj": {
+              "projectPath": "C:\\Users\\davor\\git_practice\\cs\\note_taking_app\\NoteTakingApp\\NotemanLibrary\\NotemanLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

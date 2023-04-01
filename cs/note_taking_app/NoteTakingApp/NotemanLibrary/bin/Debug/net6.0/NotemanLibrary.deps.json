@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "MainForm/1.0.0": {
-        "dependencies": {
-          "NotemanLibrary": "1.0.0"
-        },
-        "runtime": {
-          "MainForm.dll": {}
-        }
-      },
       "NotemanLibrary/1.0.0": {
         "runtime": {
           "NotemanLibrary.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "MainForm/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "NotemanLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,

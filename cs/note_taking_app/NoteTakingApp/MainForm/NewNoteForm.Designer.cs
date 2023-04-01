@@ -141,6 +141,7 @@
             this.cancelNewNoteButton.TabIndex = 16;
             this.cancelNewNoteButton.Text = "Cancel";
             this.cancelNewNoteButton.UseVisualStyleBackColor = true;
+            this.cancelNewNoteButton.Click += new System.EventHandler(this.cancelNewNoteButton_Click);
             // 
             // saveNoteButton
             // 
@@ -156,6 +157,7 @@
             this.saveNoteButton.TabIndex = 15;
             this.saveNoteButton.Text = "Save Note";
             this.saveNoteButton.UseVisualStyleBackColor = true;
+            this.saveNoteButton.Click += new System.EventHandler(this.saveNoteButton_Click);
             // 
             // browseAttachDialog
             // 

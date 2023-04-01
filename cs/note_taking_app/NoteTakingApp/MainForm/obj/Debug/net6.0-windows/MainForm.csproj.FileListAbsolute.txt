@@ -17,3 +17,6 @@ C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\obj\Debug\
 C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\obj\Debug\net6.0-windows\ref\MainForm.dll
 C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\obj\Debug\net6.0-windows\MainForm.EditNoteForm.resources
 C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\obj\Debug\net6.0-windows\MainForm.NewNoteForm.resources
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\bin\Debug\net6.0-windows\NotemanLibrary.dll
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\bin\Debug\net6.0-windows\NotemanLibrary.pdb
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\obj\Debug\net6.0-windows\MainForm.csproj.CopyComplete

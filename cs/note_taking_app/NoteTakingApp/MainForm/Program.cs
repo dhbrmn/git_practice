@@ -1,6 +1,6 @@
 namespace MainForm
 {
-    internal static class Program
+    static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
@@ -11,7 +11,12 @@ namespace MainForm
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new mainForm());
+
+            // Initialize database connection
+            NotemanLibrary.GlobalConfig.InitializeConnections(true);
+            Application.Run(new NewNoteForm());
+
+            //Application.Run(new MainForm());
         }
     }
 }
