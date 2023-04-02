@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+using NotemanLibrary.DataAccess;
 
 namespace NotemanLibrary
 {
@@ -21,5 +23,12 @@ namespace NotemanLibrary
                 Connections.Add( sql );
             }
         }
+
+        public static string CnnString(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+        }
+
+
     }
 }

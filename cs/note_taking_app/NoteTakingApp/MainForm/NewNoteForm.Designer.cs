@@ -29,186 +29,186 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewNoteForm));
-            this.headerLabel = new System.Windows.Forms.Label();
-            this.noteBodyTextBox = new System.Windows.Forms.RichTextBox();
-            this.noteBodyLabel = new System.Windows.Forms.Label();
-            this.titleTextBox = new System.Windows.Forms.TextBox();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.addAttachLabel = new System.Windows.Forms.Label();
-            this.attachListBox = new System.Windows.Forms.ListBox();
-            this.browseAttachButton = new System.Windows.Forms.Button();
-            this.cancelNewNoteButton = new System.Windows.Forms.Button();
-            this.saveNoteButton = new System.Windows.Forms.Button();
-            this.browseAttachDialog = new System.Windows.Forms.OpenFileDialog();
-            this.deleteAttachButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            headerLabel =  new Label() ;
+            noteBodyTextBox =  new RichTextBox() ;
+            noteBodyLabel =  new Label() ;
+            titleTextBox =  new TextBox() ;
+            titleLabel =  new Label() ;
+            addAttachLabel =  new Label() ;
+            attachListBox =  new ListBox() ;
+            browseAttachButton =  new Button() ;
+            cancelNewNoteButton =  new Button() ;
+            saveNoteButton =  new Button() ;
+            browseAttachDialog =  new OpenFileDialog() ;
+            deleteAttachButton =  new Button() ;
+            SuspendLayout();
             // 
             // headerLabel
             // 
-            this.headerLabel.AutoSize = true;
-            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.headerLabel.ForeColor = System.Drawing.Color.DarkGreen;
-            this.headerLabel.Location = new System.Drawing.Point(12, 9);
-            this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(671, 65);
-            this.headerLabel.TabIndex = 1;
-            this.headerLabel.Text = "Noteman - Create a New Note";
+            headerLabel.AutoSize =  true ;
+            headerLabel.Font =  new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point) ;
+            headerLabel.ForeColor =  Color.DarkGreen ;
+            headerLabel.Location =  new Point(12, 9) ;
+            headerLabel.Name =  "headerLabel" ;
+            headerLabel.Size =  new Size(671, 65) ;
+            headerLabel.TabIndex =  1 ;
+            headerLabel.Text =  "Noteman - Create a New Note" ;
             // 
             // noteBodyTextBox
             // 
-            this.noteBodyTextBox.Location = new System.Drawing.Point(26, 142);
-            this.noteBodyTextBox.Name = "noteBodyTextBox";
-            this.noteBodyTextBox.Size = new System.Drawing.Size(387, 324);
-            this.noteBodyTextBox.TabIndex = 10;
-            this.noteBodyTextBox.Text = "";
+            noteBodyTextBox.Location =  new Point(26, 142) ;
+            noteBodyTextBox.Name =  "noteBodyTextBox" ;
+            noteBodyTextBox.Size =  new Size(387, 324) ;
+            noteBodyTextBox.TabIndex =  10 ;
+            noteBodyTextBox.Text =  "" ;
             // 
             // noteBodyLabel
             // 
-            this.noteBodyLabel.AutoSize = true;
-            this.noteBodyLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.noteBodyLabel.ForeColor = System.Drawing.Color.Green;
-            this.noteBodyLabel.Location = new System.Drawing.Point(26, 109);
-            this.noteBodyLabel.Name = "noteBodyLabel";
-            this.noteBodyLabel.Size = new System.Drawing.Size(66, 30);
-            this.noteBodyLabel.TabIndex = 9;
-            this.noteBodyLabel.Text = "Note:";
+            noteBodyLabel.AutoSize =  true ;
+            noteBodyLabel.Font =  new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point) ;
+            noteBodyLabel.ForeColor =  Color.Green ;
+            noteBodyLabel.Location =  new Point(26, 109) ;
+            noteBodyLabel.Name =  "noteBodyLabel" ;
+            noteBodyLabel.Size =  new Size(66, 30) ;
+            noteBodyLabel.TabIndex =  9 ;
+            noteBodyLabel.Text =  "Note:" ;
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(91, 71);
-            this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(598, 35);
-            this.titleTextBox.TabIndex = 8;
+            titleTextBox.Location =  new Point(91, 71) ;
+            titleTextBox.Name =  "titleTextBox" ;
+            titleTextBox.Size =  new Size(598, 35) ;
+            titleTextBox.TabIndex =  8 ;
+            titleTextBox.Text =  "New Note" ;
             // 
             // titleLabel
             // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.titleLabel.ForeColor = System.Drawing.Color.Green;
-            this.titleLabel.Location = new System.Drawing.Point(26, 74);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(59, 30);
-            this.titleLabel.TabIndex = 7;
-            this.titleLabel.Text = "Title:";
+            titleLabel.AutoSize =  true ;
+            titleLabel.Font =  new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point) ;
+            titleLabel.ForeColor =  Color.Green ;
+            titleLabel.Location =  new Point(26, 74) ;
+            titleLabel.Name =  "titleLabel" ;
+            titleLabel.Size =  new Size(59, 30) ;
+            titleLabel.TabIndex =  7 ;
+            titleLabel.Text =  "Title:" ;
             // 
             // addAttachLabel
             // 
-            this.addAttachLabel.AutoSize = true;
-            this.addAttachLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addAttachLabel.ForeColor = System.Drawing.Color.Green;
-            this.addAttachLabel.Location = new System.Drawing.Point(464, 142);
-            this.addAttachLabel.Name = "addAttachLabel";
-            this.addAttachLabel.Size = new System.Drawing.Size(178, 30);
-            this.addAttachLabel.TabIndex = 11;
-            this.addAttachLabel.Text = "Add Atachments:";
+            addAttachLabel.AutoSize =  true ;
+            addAttachLabel.Font =  new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point) ;
+            addAttachLabel.ForeColor =  Color.Green ;
+            addAttachLabel.Location =  new Point(464, 142) ;
+            addAttachLabel.Name =  "addAttachLabel" ;
+            addAttachLabel.Size =  new Size(178, 30) ;
+            addAttachLabel.TabIndex =  11 ;
+            addAttachLabel.Text =  "Add Atachments:" ;
             // 
             // attachListBox
             // 
-            this.attachListBox.FormattingEnabled = true;
-            this.attachListBox.ItemHeight = 30;
-            this.attachListBox.Location = new System.Drawing.Point(464, 175);
-            this.attachListBox.Name = "attachListBox";
-            this.attachListBox.Size = new System.Drawing.Size(225, 94);
-            this.attachListBox.TabIndex = 13;
+            attachListBox.FormattingEnabled =  true ;
+            attachListBox.ItemHeight =  30 ;
+            attachListBox.Location =  new Point(464, 175) ;
+            attachListBox.Name =  "attachListBox" ;
+            attachListBox.Size =  new Size(225, 94) ;
+            attachListBox.TabIndex =  13 ;
             // 
             // browseAttachButton
             // 
-            this.browseAttachButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.browseAttachButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.browseAttachButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
-            this.browseAttachButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.browseAttachButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.browseAttachButton.ForeColor = System.Drawing.Color.Green;
-            this.browseAttachButton.Location = new System.Drawing.Point(495, 275);
-            this.browseAttachButton.Name = "browseAttachButton";
-            this.browseAttachButton.Size = new System.Drawing.Size(163, 37);
-            this.browseAttachButton.TabIndex = 14;
-            this.browseAttachButton.Text = "Browse";
-            this.browseAttachButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.browseAttachButton.UseVisualStyleBackColor = true;
+            browseAttachButton.FlatAppearance.BorderColor =  Color.Green ;
+            browseAttachButton.FlatAppearance.MouseDownBackColor =  Color.Green ;
+            browseAttachButton.FlatAppearance.MouseOverBackColor =  Color.PaleGreen ;
+            browseAttachButton.FlatStyle =  FlatStyle.Flat ;
+            browseAttachButton.Font =  new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point) ;
+            browseAttachButton.ForeColor =  Color.Green ;
+            browseAttachButton.Location =  new Point(495, 275) ;
+            browseAttachButton.Name =  "browseAttachButton" ;
+            browseAttachButton.Size =  new Size(163, 37) ;
+            browseAttachButton.TabIndex =  14 ;
+            browseAttachButton.Text =  "Browse" ;
+            browseAttachButton.TextImageRelation =  TextImageRelation.TextAboveImage ;
+            browseAttachButton.UseVisualStyleBackColor =  true ;
             // 
             // cancelNewNoteButton
             // 
-            this.cancelNewNoteButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.cancelNewNoteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.cancelNewNoteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
-            this.cancelNewNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelNewNoteButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cancelNewNoteButton.ForeColor = System.Drawing.Color.Green;
-            this.cancelNewNoteButton.Location = new System.Drawing.Point(584, 399);
-            this.cancelNewNoteButton.Name = "cancelNewNoteButton";
-            this.cancelNewNoteButton.Size = new System.Drawing.Size(105, 67);
-            this.cancelNewNoteButton.TabIndex = 16;
-            this.cancelNewNoteButton.Text = "Cancel";
-            this.cancelNewNoteButton.UseVisualStyleBackColor = true;
-            this.cancelNewNoteButton.Click += new System.EventHandler(this.cancelNewNoteButton_Click);
+            cancelNewNoteButton.FlatAppearance.BorderColor =  Color.Green ;
+            cancelNewNoteButton.FlatAppearance.MouseDownBackColor =  Color.Green ;
+            cancelNewNoteButton.FlatAppearance.MouseOverBackColor =  Color.PaleGreen ;
+            cancelNewNoteButton.FlatStyle =  FlatStyle.Flat ;
+            cancelNewNoteButton.Font =  new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point) ;
+            cancelNewNoteButton.ForeColor =  Color.Green ;
+            cancelNewNoteButton.Location =  new Point(584, 399) ;
+            cancelNewNoteButton.Name =  "cancelNewNoteButton" ;
+            cancelNewNoteButton.Size =  new Size(105, 67) ;
+            cancelNewNoteButton.TabIndex =  16 ;
+            cancelNewNoteButton.Text =  "Cancel" ;
+            cancelNewNoteButton.UseVisualStyleBackColor =  true ;
+            cancelNewNoteButton.Click +=  cancelNewNoteButton_Click ;
             // 
             // saveNoteButton
             // 
-            this.saveNoteButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.saveNoteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.saveNoteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
-            this.saveNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveNoteButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.saveNoteButton.ForeColor = System.Drawing.Color.Green;
-            this.saveNoteButton.Location = new System.Drawing.Point(464, 399);
-            this.saveNoteButton.Name = "saveNoteButton";
-            this.saveNoteButton.Size = new System.Drawing.Size(105, 67);
-            this.saveNoteButton.TabIndex = 15;
-            this.saveNoteButton.Text = "Save Note";
-            this.saveNoteButton.UseVisualStyleBackColor = true;
-            this.saveNoteButton.Click += new System.EventHandler(this.saveNoteButton_Click);
+            saveNoteButton.FlatAppearance.BorderColor =  Color.Green ;
+            saveNoteButton.FlatAppearance.MouseDownBackColor =  Color.Green ;
+            saveNoteButton.FlatAppearance.MouseOverBackColor =  Color.PaleGreen ;
+            saveNoteButton.FlatStyle =  FlatStyle.Flat ;
+            saveNoteButton.Font =  new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point) ;
+            saveNoteButton.ForeColor =  Color.Green ;
+            saveNoteButton.Location =  new Point(464, 399) ;
+            saveNoteButton.Name =  "saveNoteButton" ;
+            saveNoteButton.Size =  new Size(105, 67) ;
+            saveNoteButton.TabIndex =  15 ;
+            saveNoteButton.Text =  "Save Note" ;
+            saveNoteButton.UseVisualStyleBackColor =  true ;
+            saveNoteButton.Click +=  saveNoteButton_Click ;
             // 
             // browseAttachDialog
             // 
-            this.browseAttachDialog.Filter = "All files|*.*";
-            this.browseAttachDialog.InitialDirectory = "C:\\\\";
+            browseAttachDialog.Filter =  "All files|*.*" ;
+            browseAttachDialog.InitialDirectory =  "C:\\\\" ;
             // 
             // deleteAttachButton
             // 
-            this.deleteAttachButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.deleteAttachButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.deleteAttachButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
-            this.deleteAttachButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteAttachButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.deleteAttachButton.ForeColor = System.Drawing.Color.Green;
-            this.deleteAttachButton.Location = new System.Drawing.Point(495, 318);
-            this.deleteAttachButton.Name = "deleteAttachButton";
-            this.deleteAttachButton.Size = new System.Drawing.Size(163, 37);
-            this.deleteAttachButton.TabIndex = 17;
-            this.deleteAttachButton.Text = "Remove";
-            this.deleteAttachButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.deleteAttachButton.UseVisualStyleBackColor = true;
+            deleteAttachButton.FlatAppearance.BorderColor =  Color.Green ;
+            deleteAttachButton.FlatAppearance.MouseDownBackColor =  Color.Green ;
+            deleteAttachButton.FlatAppearance.MouseOverBackColor =  Color.PaleGreen ;
+            deleteAttachButton.FlatStyle =  FlatStyle.Flat ;
+            deleteAttachButton.Font =  new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point) ;
+            deleteAttachButton.ForeColor =  Color.Green ;
+            deleteAttachButton.Location =  new Point(495, 318) ;
+            deleteAttachButton.Name =  "deleteAttachButton" ;
+            deleteAttachButton.Size =  new Size(163, 37) ;
+            deleteAttachButton.TabIndex =  17 ;
+            deleteAttachButton.Text =  "Remove" ;
+            deleteAttachButton.TextImageRelation =  TextImageRelation.TextAboveImage ;
+            deleteAttachButton.UseVisualStyleBackColor =  true ;
             // 
             // NewNoteForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(714, 491);
-            this.Controls.Add(this.deleteAttachButton);
-            this.Controls.Add(this.cancelNewNoteButton);
-            this.Controls.Add(this.saveNoteButton);
-            this.Controls.Add(this.browseAttachButton);
-            this.Controls.Add(this.attachListBox);
-            this.Controls.Add(this.addAttachLabel);
-            this.Controls.Add(this.noteBodyTextBox);
-            this.Controls.Add(this.noteBodyLabel);
-            this.Controls.Add(this.titleTextBox);
-            this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.headerLabel);
-            this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.MaximizeBox = false;
-            this.MdiChildrenMinimizedAnchorBottom = false;
-            this.MinimizeBox = false;
-            this.Name = "NewNoteForm";
-            this.Text = "Create New Note";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions =  new SizeF(12F, 30F) ;
+            AutoScaleMode =  AutoScaleMode.Font ;
+            BackColor =  Color.White ;
+            ClientSize =  new Size(714, 491) ;
+            Controls.Add(deleteAttachButton);
+            Controls.Add(cancelNewNoteButton);
+            Controls.Add(saveNoteButton);
+            Controls.Add(browseAttachButton);
+            Controls.Add(attachListBox);
+            Controls.Add(addAttachLabel);
+            Controls.Add(noteBodyTextBox);
+            Controls.Add(noteBodyLabel);
+            Controls.Add(titleTextBox);
+            Controls.Add(titleLabel);
+            Controls.Add(headerLabel);
+            Font =  new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point) ;
+            FormBorderStyle =  FormBorderStyle.FixedToolWindow ;
+            Icon =  (Icon) resources.GetObject("$this.Icon")  ;
+            Margin =  new Padding(5, 6, 5, 6) ;
+            MaximizeBox =  false ;
+            MdiChildrenMinimizedAnchorBottom =  false ;
+            MinimizeBox =  false ;
+            Name =  "NewNoteForm" ;
+            Text =  "Create New Note" ;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
