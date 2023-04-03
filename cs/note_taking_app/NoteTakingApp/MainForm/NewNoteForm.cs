@@ -24,8 +24,7 @@ namespace MainForm
         {
             if (ValidateForm())
             {
-                string date = DateTime.UtcNow.ToString();
-                NoteModel model = new(titleTextBox.Text, noteBodyTextBox.Text/*, attachListBox.Items, date*/);
+                NoteModel model = new(titleTextBox.Text, noteBodyTextBox.Text/*, attachListBox.Items*/);
 
                 foreach (IDataConnection db in GlobalConfig.Connections)
                 {

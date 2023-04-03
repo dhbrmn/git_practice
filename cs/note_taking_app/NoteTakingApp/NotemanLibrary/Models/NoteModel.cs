@@ -12,7 +12,7 @@ namespace NotemanLibrary.Models
         /// <summary>
         /// Unique identifier for every note
         /// </summary>
-        public int Id
+        public int ID
         {
             get; set;
         }
@@ -34,36 +34,30 @@ namespace NotemanLibrary.Models
         }
 
         /// <summary>
-        /// The list of attachments that are attached to a selected note
-        /// </summary>
-        //public List<object>? Attachment
-        //{
-        //    get; set;
-        //}
-
-        /// <summary>
         /// The date and time of creation or modification of a stored note
         /// </summary>
-        //public string Date
-        //{
-        //    get; set;
-        //}
-
-        public NoteModel(string title/*, string date*/)
+        public string Date
         {
-            Title = title;
-          //  Date = date;
+            get; set;
+        }
+        public NoteModel()
+        {
         }
 
-        public NoteModel(string title, string body/*, List<object> attachments, string date*/)
+        public NoteModel(string title)
+        {
+            Title = title;
+            string date = DateTime.Now.ToString();
+            Date = date;
+        }
+
+        public NoteModel(string title, string body/*, List<object> attachments*/)
         {
            Title = title;
-            Body = body;
-
-            
-        //     Attachment = attachments;
-            
-        //    Date = date;
+           Body = body;
+           string date = DateTime.Now.ToString();
+           Date = date;
+            //     Attachment = attachments;
         }
     }
 }
