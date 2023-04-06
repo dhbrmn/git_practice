@@ -206,6 +206,7 @@
             MdiChildrenMinimizedAnchorBottom =  false ;
             MinimizeBox =  false ;
             Name =  "NewNoteForm" ;
+            StartPosition =  FormStartPosition.CenterScreen ;
             Text =  "Create New Note" ;
             ResumeLayout(false);
             PerformLayout();

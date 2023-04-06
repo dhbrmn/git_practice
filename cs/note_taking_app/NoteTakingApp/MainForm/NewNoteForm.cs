@@ -7,12 +7,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MainForm
 {
+    // TODO - Add functionality for attachments
     public partial class NewNoteForm : Form
     {
         public NewNoteForm()
@@ -40,6 +42,7 @@ namespace MainForm
             {
                 MessageBox.Show("This note has no title. Please input a title.");
             }
+            Close();
         }
 
         private bool ValidateForm()
@@ -56,8 +59,15 @@ namespace MainForm
 
         private void cancelNewNoteButton_Click( object sender, EventArgs e )
         {
-            Close();
+            DialogResult dr = MessageBox.Show("Close without saving?", "Are you sure?", MessageBoxButtons.YesNo);
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    Close();
+                    break;
+                case DialogResult.No:
+                    break;
+            }
         }
-
     }
 }

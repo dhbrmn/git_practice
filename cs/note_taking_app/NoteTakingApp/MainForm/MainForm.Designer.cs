@@ -1,4 +1,6 @@
-﻿namespace MainForm
+﻿using NotemanLibrary.Models;
+
+namespace MainForm
 {
     partial class MainForm
     {
@@ -70,11 +72,13 @@
             // 
             // selectNoteDropDown
             // 
+            selectNoteDropDown.DropDownStyle =  ComboBoxStyle.DropDownList ;
             selectNoteDropDown.FormattingEnabled =  true ;
             selectNoteDropDown.Location =  new Point(190, 79) ;
             selectNoteDropDown.Name =  "selectNoteDropDown" ;
             selectNoteDropDown.Size =  new Size(337, 38) ;
             selectNoteDropDown.TabIndex =  2 ;
+            selectNoteDropDown.DropDown +=  selectNoteDropDown_DropDown ;
             selectNoteDropDown.SelectedIndexChanged +=  selectNoteDropDown_SelectedIndexChanged ;
             // 
             // titleLabel
@@ -92,6 +96,7 @@
             // 
             titleTextBox.Location =  new Point(88, 139) ;
             titleTextBox.Name =  "titleTextBox" ;
+            titleTextBox.ReadOnly =  true ;
             titleTextBox.Size =  new Size(355, 35) ;
             titleTextBox.TabIndex =  4 ;
             // 
@@ -110,6 +115,7 @@
             // 
             noteBodyTextBox.Location =  new Point(23, 222) ;
             noteBodyTextBox.Name =  "noteBodyTextBox" ;
+            noteBodyTextBox.ReadOnly =  true ;
             noteBodyTextBox.Size =  new Size(420, 248) ;
             noteBodyTextBox.TabIndex =  6 ;
             noteBodyTextBox.Text =  "" ;
@@ -143,9 +149,8 @@
             lastDateLabel.ForeColor =  Color.Green ;
             lastDateLabel.Location =  new Point(468, 358) ;
             lastDateLabel.Name =  "lastDateLabel" ;
-            lastDateLabel.Size =  new Size(219, 25) ;
+            lastDateLabel.Size =  new Size(0, 25) ;
             lastDateLabel.TabIndex =  11 ;
-            lastDateLabel.Text =  "<yyyy/mm/dd hh/mm>" ;
             // 
             // editNoteButton
             // 
@@ -161,6 +166,7 @@
             editNoteButton.TabIndex =  12 ;
             editNoteButton.Text =  "Edit Note" ;
             editNoteButton.UseVisualStyleBackColor =  true ;
+            editNoteButton.Click +=  editNoteButton_Click ;
             // 
             // newNoteButton
             // 
@@ -176,6 +182,7 @@
             newNoteButton.TabIndex =  13 ;
             newNoteButton.Text =  "New Note" ;
             newNoteButton.UseVisualStyleBackColor =  true ;
+            newNoteButton.Click +=  newNoteButton_Click ;
             // 
             // button1
             // 
@@ -216,6 +223,7 @@
             deleteNoteButton.TabStop =  false ;
             deleteNoteButton.Text =  "Delete Note" ;
             deleteNoteButton.UseVisualStyleBackColor =  true ;
+            deleteNoteButton.Click +=  deleteNoteButton_Click ;
             // 
             // MainForm
             // 
@@ -246,6 +254,7 @@
             MdiChildrenMinimizedAnchorBottom =  false ;
             MinimizeBox =  false ;
             Name =  "MainForm" ;
+            StartPosition =  FormStartPosition.CenterScreen ;
             Text =  "Noteman" ;
             ResumeLayout(false);
             PerformLayout();

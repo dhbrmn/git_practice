@@ -10,5 +10,9 @@ namespace NotemanLibrary.DataAccess
     public interface IDataConnection
     {
         NoteModel CreateNote(NoteModel model);
+        NoteModel ReadNote(int id);
+        NoteModel[] GetAllNotes();
+        void DeleteNote( NoteModel model );
+        int RowsNumber();
     }
 }

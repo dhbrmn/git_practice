@@ -39,14 +39,13 @@ namespace NotemanLibrary.DataAccess
         }
         public NoteModel ReadNote( int id )
         {
-            NoteModel model = new NoteModel { ID = id };
-            var n = new DynamicParameters();
-            n.Add("@ID", id);
             using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
             {
-            connection.QuerySingle<NoteModel> ("SELECT * FROM Notes WHERE ID=@ID",n);
+                var input = new DynamicParameters();
+                input.Add("@ID", id);
+                NoteModel model = (NoteModel)connection.QuerySingle<NoteModel> ("SELECT * FROM Notes WHERE ID = @ID", input ,commandType: CommandType.Text);
+                return model;
             }
-            // TODO - finish this
         }
         //public NoteModel UpdateNote( NoteModel model )
         //{
@@ -56,13 +55,33 @@ namespace NotemanLibrary.DataAccess
         //        // TODO - Make it so it can update an already saved note with new parameters
         //    }
         //}
-        //public void DeleteNote( NoteModel model )
-        //{
-        //    using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
-        //    {
-        //        var n = new DynamicParameters();
-        //        // TODO - Make it so it deletes an already saved note from the db
-        //    }
-        //}
+        public void DeleteNote( NoteModel model )
+        {
+            using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
+            {
+                var n = new DynamicParameters();
+                n.Add("@ID", model.ID);
+                connection.Execute("DELETE FROM Notes WHERE ID = @ID", n, commandType: CommandType.Text);
+            }
+        }
+        public NoteModel[] GetAllNotes()
+        {
+            using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
+            {
+                int rows = RowsNumber();
+                var notesArray = connection.Query<NoteModel>("SELECT * FROM Notes", commandType: CommandType.Text).ToArray();
+                return notesArray;
+            }
+        }
+
+        public int RowsNumber()
+        {
+            using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
+            {
+                Int64 rowsInt64 = (Int64)connection.ExecuteScalar("SELECT COUNT (*) FROM Notes");
+                int rows = (int)rowsInt64;
+                return rows;
+            }
+        }
     }
 }
