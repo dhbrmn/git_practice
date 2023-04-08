@@ -51,13 +51,12 @@ namespace NotemanLibrary.Models
             Date = date;
         }
 
-        public NoteModel(string title, string body/*, List<object> attachments*/)
+        public NoteModel(string title, string body)
         {
            Title = title;
            Body = body;
            string date = DateTime.Now.ToString();
            Date = date;
-            //     Attachment = attachments;
         }
     }
 }
