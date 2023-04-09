@@ -1,4 +1,6 @@
-﻿namespace MainForm
+﻿using NotemanLibrary.Models;
+
+namespace MainForm
 {
     partial class MainForm
     {
@@ -29,208 +31,233 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.headerLabel = new System.Windows.Forms.Label();
-            this.selectNoteLabel = new System.Windows.Forms.Label();
-            this.selectNoteDropDown = new System.Windows.Forms.ComboBox();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.titleTextBox = new System.Windows.Forms.TextBox();
-            this.noteBodyLabel = new System.Windows.Forms.Label();
-            this.noteBodyTextBox = new System.Windows.Forms.RichTextBox();
-            this.attachLabel = new System.Windows.Forms.Label();
-            this.lastDateOnLabel = new System.Windows.Forms.Label();
-            this.lastDateLabel = new System.Windows.Forms.Label();
-            this.editNoteButton = new System.Windows.Forms.Button();
-            this.newNoteButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.attachListBox = new System.Windows.Forms.ListBox();
-            this.SuspendLayout();
+            headerLabel =  new Label() ;
+            selectNoteLabel =  new Label() ;
+            selectNoteDropDown =  new ComboBox() ;
+            titleLabel =  new Label() ;
+            titleTextBox =  new TextBox() ;
+            noteBodyLabel =  new Label() ;
+            noteBodyTextBox =  new RichTextBox() ;
+            attachLabel =  new Label() ;
+            lastDateOnLabel =  new Label() ;
+            lastDateLabel =  new Label() ;
+            editNoteButton =  new Button() ;
+            newNoteButton =  new Button() ;
+            button1 =  new Button() ;
+            attachListBox =  new ListBox() ;
+            deleteNoteButton =  new Button() ;
+            SuspendLayout();
             // 
             // headerLabel
             // 
-            this.headerLabel.AutoSize = true;
-            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.headerLabel.ForeColor = System.Drawing.Color.DarkGreen;
-            this.headerLabel.Location = new System.Drawing.Point(6, 9);
-            this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(713, 65);
-            this.headerLabel.TabIndex = 0;
-            this.headerLabel.Text = "Noteman - The Note Taking App";
+            headerLabel.AutoSize =  true ;
+            headerLabel.Font =  new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point) ;
+            headerLabel.ForeColor =  Color.DarkGreen ;
+            headerLabel.Location =  new Point(6, 9) ;
+            headerLabel.Name =  "headerLabel" ;
+            headerLabel.Size =  new Size(713, 65) ;
+            headerLabel.TabIndex =  0 ;
+            headerLabel.Text =  "Noteman - The Note Taking App" ;
             // 
             // selectNoteLabel
             // 
-            this.selectNoteLabel.AutoSize = true;
-            this.selectNoteLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.selectNoteLabel.ForeColor = System.Drawing.Color.Green;
-            this.selectNoteLabel.Location = new System.Drawing.Point(23, 74);
-            this.selectNoteLabel.Name = "selectNoteLabel";
-            this.selectNoteLabel.Size = new System.Drawing.Size(174, 40);
-            this.selectNoteLabel.TabIndex = 1;
-            this.selectNoteLabel.Text = "Select Note:";
+            selectNoteLabel.AutoSize =  true ;
+            selectNoteLabel.Font =  new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point) ;
+            selectNoteLabel.ForeColor =  Color.Green ;
+            selectNoteLabel.Location =  new Point(23, 74) ;
+            selectNoteLabel.Name =  "selectNoteLabel" ;
+            selectNoteLabel.Size =  new Size(174, 40) ;
+            selectNoteLabel.TabIndex =  1 ;
+            selectNoteLabel.Text =  "Select Note:" ;
             // 
             // selectNoteDropDown
             // 
-            this.selectNoteDropDown.FormattingEnabled = true;
-            this.selectNoteDropDown.Location = new System.Drawing.Point(190, 79);
-            this.selectNoteDropDown.Name = "selectNoteDropDown";
-            this.selectNoteDropDown.Size = new System.Drawing.Size(506, 38);
-            this.selectNoteDropDown.TabIndex = 2;
+            selectNoteDropDown.DropDownStyle =  ComboBoxStyle.DropDownList ;
+            selectNoteDropDown.FormattingEnabled =  true ;
+            selectNoteDropDown.Location =  new Point(190, 79) ;
+            selectNoteDropDown.Name =  "selectNoteDropDown" ;
+            selectNoteDropDown.Size =  new Size(337, 38) ;
+            selectNoteDropDown.TabIndex =  2 ;
+            selectNoteDropDown.DropDown +=  selectNoteDropDown_DropDown ;
+            selectNoteDropDown.SelectedIndexChanged +=  selectNoteDropDown_SelectedIndexChanged ;
             // 
             // titleLabel
             // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.titleLabel.ForeColor = System.Drawing.Color.Green;
-            this.titleLabel.Location = new System.Drawing.Point(23, 144);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(59, 30);
-            this.titleLabel.TabIndex = 3;
-            this.titleLabel.Text = "Title:";
+            titleLabel.AutoSize =  true ;
+            titleLabel.Font =  new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point) ;
+            titleLabel.ForeColor =  Color.Green ;
+            titleLabel.Location =  new Point(23, 144) ;
+            titleLabel.Name =  "titleLabel" ;
+            titleLabel.Size =  new Size(59, 30) ;
+            titleLabel.TabIndex =  3 ;
+            titleLabel.Text =  "Title:" ;
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(88, 139);
-            this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(355, 35);
-            this.titleTextBox.TabIndex = 4;
+            titleTextBox.Location =  new Point(88, 139) ;
+            titleTextBox.Name =  "titleTextBox" ;
+            titleTextBox.ReadOnly =  true ;
+            titleTextBox.Size =  new Size(355, 35) ;
+            titleTextBox.TabIndex =  4 ;
             // 
             // noteBodyLabel
             // 
-            this.noteBodyLabel.AutoSize = true;
-            this.noteBodyLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.noteBodyLabel.ForeColor = System.Drawing.Color.Green;
-            this.noteBodyLabel.Location = new System.Drawing.Point(23, 189);
-            this.noteBodyLabel.Name = "noteBodyLabel";
-            this.noteBodyLabel.Size = new System.Drawing.Size(66, 30);
-            this.noteBodyLabel.TabIndex = 5;
-            this.noteBodyLabel.Text = "Note:";
+            noteBodyLabel.AutoSize =  true ;
+            noteBodyLabel.Font =  new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point) ;
+            noteBodyLabel.ForeColor =  Color.Green ;
+            noteBodyLabel.Location =  new Point(23, 189) ;
+            noteBodyLabel.Name =  "noteBodyLabel" ;
+            noteBodyLabel.Size =  new Size(66, 30) ;
+            noteBodyLabel.TabIndex =  5 ;
+            noteBodyLabel.Text =  "Note:" ;
             // 
             // noteBodyTextBox
             // 
-            this.noteBodyTextBox.Location = new System.Drawing.Point(23, 222);
-            this.noteBodyTextBox.Name = "noteBodyTextBox";
-            this.noteBodyTextBox.Size = new System.Drawing.Size(420, 248);
-            this.noteBodyTextBox.TabIndex = 6;
-            this.noteBodyTextBox.Text = "";
+            noteBodyTextBox.Location =  new Point(23, 222) ;
+            noteBodyTextBox.Name =  "noteBodyTextBox" ;
+            noteBodyTextBox.ReadOnly =  true ;
+            noteBodyTextBox.Size =  new Size(420, 248) ;
+            noteBodyTextBox.TabIndex =  6 ;
+            noteBodyTextBox.Text =  "" ;
             // 
             // attachLabel
             // 
-            this.attachLabel.AutoSize = true;
-            this.attachLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.attachLabel.ForeColor = System.Drawing.Color.Green;
-            this.attachLabel.Location = new System.Drawing.Point(468, 142);
-            this.attachLabel.Name = "attachLabel";
-            this.attachLabel.Size = new System.Drawing.Size(140, 30);
-            this.attachLabel.TabIndex = 7;
-            this.attachLabel.Text = "Attachments:";
+            attachLabel.AutoSize =  true ;
+            attachLabel.Font =  new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point) ;
+            attachLabel.ForeColor =  Color.Green ;
+            attachLabel.Location =  new Point(468, 142) ;
+            attachLabel.Name =  "attachLabel" ;
+            attachLabel.Size =  new Size(140, 30) ;
+            attachLabel.TabIndex =  7 ;
+            attachLabel.Text =  "Attachments:" ;
             // 
             // lastDateOnLabel
             // 
-            this.lastDateOnLabel.AutoSize = true;
-            this.lastDateOnLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 13.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lastDateOnLabel.ForeColor = System.Drawing.Color.Green;
-            this.lastDateOnLabel.Location = new System.Drawing.Point(468, 333);
-            this.lastDateOnLabel.Name = "lastDateOnLabel";
-            this.lastDateOnLabel.Size = new System.Drawing.Size(137, 25);
-            this.lastDateOnLabel.TabIndex = 10;
-            this.lastDateOnLabel.Text = "Last edited on:";
+            lastDateOnLabel.AutoSize =  true ;
+            lastDateOnLabel.Font =  new Font("Segoe UI Semibold", 13.75F, FontStyle.Bold, GraphicsUnit.Point) ;
+            lastDateOnLabel.ForeColor =  Color.Green ;
+            lastDateOnLabel.Location =  new Point(468, 333) ;
+            lastDateOnLabel.Name =  "lastDateOnLabel" ;
+            lastDateOnLabel.Size =  new Size(137, 25) ;
+            lastDateOnLabel.TabIndex =  10 ;
+            lastDateOnLabel.Text =  "Last edited on:" ;
             // 
             // lastDateLabel
             // 
-            this.lastDateLabel.AutoSize = true;
-            this.lastDateLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lastDateLabel.ForeColor = System.Drawing.Color.Green;
-            this.lastDateLabel.Location = new System.Drawing.Point(468, 358);
-            this.lastDateLabel.Name = "lastDateLabel";
-            this.lastDateLabel.Size = new System.Drawing.Size(219, 25);
-            this.lastDateLabel.TabIndex = 11;
-            this.lastDateLabel.Text = "<yyyy/mm/dd hh/mm>";
+            lastDateLabel.AutoSize =  true ;
+            lastDateLabel.Font =  new Font("Segoe UI Semibold", 13.75F, FontStyle.Regular, GraphicsUnit.Point) ;
+            lastDateLabel.ForeColor =  Color.Green ;
+            lastDateLabel.Location =  new Point(468, 358) ;
+            lastDateLabel.Name =  "lastDateLabel" ;
+            lastDateLabel.Size =  new Size(0, 25) ;
+            lastDateLabel.TabIndex =  11 ;
             // 
             // editNoteButton
             // 
-            this.editNoteButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.editNoteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.editNoteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
-            this.editNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editNoteButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.editNoteButton.ForeColor = System.Drawing.Color.Green;
-            this.editNoteButton.Location = new System.Drawing.Point(468, 403);
-            this.editNoteButton.Name = "editNoteButton";
-            this.editNoteButton.Size = new System.Drawing.Size(105, 67);
-            this.editNoteButton.TabIndex = 12;
-            this.editNoteButton.Text = "Edit Note";
-            this.editNoteButton.UseVisualStyleBackColor = true;
+            editNoteButton.FlatAppearance.BorderColor =  Color.Green ;
+            editNoteButton.FlatAppearance.MouseDownBackColor =  Color.Green ;
+            editNoteButton.FlatAppearance.MouseOverBackColor =  Color.PaleGreen ;
+            editNoteButton.FlatStyle =  FlatStyle.Flat ;
+            editNoteButton.Font =  new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point) ;
+            editNoteButton.ForeColor =  Color.Green ;
+            editNoteButton.Location =  new Point(468, 403) ;
+            editNoteButton.Name =  "editNoteButton" ;
+            editNoteButton.Size =  new Size(105, 67) ;
+            editNoteButton.TabIndex =  12 ;
+            editNoteButton.Text =  "Edit Note" ;
+            editNoteButton.UseVisualStyleBackColor =  true ;
+            editNoteButton.Click +=  editNoteButton_Click ;
             // 
             // newNoteButton
             // 
-            this.newNoteButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.newNoteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.newNoteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
-            this.newNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newNoteButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.newNoteButton.ForeColor = System.Drawing.Color.Green;
-            this.newNoteButton.Location = new System.Drawing.Point(591, 403);
-            this.newNoteButton.Name = "newNoteButton";
-            this.newNoteButton.Size = new System.Drawing.Size(105, 67);
-            this.newNoteButton.TabIndex = 13;
-            this.newNoteButton.Text = "New Note";
-            this.newNoteButton.UseVisualStyleBackColor = true;
+            newNoteButton.FlatAppearance.BorderColor =  Color.Green ;
+            newNoteButton.FlatAppearance.MouseDownBackColor =  Color.Green ;
+            newNoteButton.FlatAppearance.MouseOverBackColor =  Color.PaleGreen ;
+            newNoteButton.FlatStyle =  FlatStyle.Flat ;
+            newNoteButton.Font =  new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point) ;
+            newNoteButton.ForeColor =  Color.Green ;
+            newNoteButton.Location =  new Point(591, 403) ;
+            newNoteButton.Name =  "newNoteButton" ;
+            newNoteButton.Size =  new Size(105, 67) ;
+            newNoteButton.TabIndex =  13 ;
+            newNoteButton.Text =  "New Note" ;
+            newNoteButton.UseVisualStyleBackColor =  true ;
+            newNoteButton.Click +=  newNoteButton_Click ;
             // 
             // button1
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.Green;
-            this.button1.Location = new System.Drawing.Point(501, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 37);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Open Selected";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.FlatAppearance.BorderColor =  Color.Green ;
+            button1.FlatAppearance.MouseDownBackColor =  Color.Green ;
+            button1.FlatAppearance.MouseOverBackColor =  Color.PaleGreen ;
+            button1.FlatStyle =  FlatStyle.Flat ;
+            button1.Font =  new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point) ;
+            button1.ForeColor =  Color.Green ;
+            button1.Location =  new Point(501, 275) ;
+            button1.Name =  "button1" ;
+            button1.Size =  new Size(163, 37) ;
+            button1.TabIndex =  9 ;
+            button1.Text =  "Open Selected" ;
+            button1.UseVisualStyleBackColor =  true ;
             // 
             // attachListBox
             // 
-            this.attachListBox.FormattingEnabled = true;
-            this.attachListBox.ItemHeight = 30;
-            this.attachListBox.Location = new System.Drawing.Point(468, 175);
-            this.attachListBox.Name = "attachListBox";
-            this.attachListBox.Size = new System.Drawing.Size(228, 94);
-            this.attachListBox.TabIndex = 14;
+            attachListBox.FormattingEnabled =  true ;
+            attachListBox.ItemHeight =  30 ;
+            attachListBox.Location =  new Point(468, 175) ;
+            attachListBox.Name =  "attachListBox" ;
+            attachListBox.Size =  new Size(228, 94) ;
+            attachListBox.TabIndex =  14 ;
+            // 
+            // deleteNoteButton
+            // 
+            deleteNoteButton.FlatAppearance.BorderColor =  Color.Green ;
+            deleteNoteButton.FlatAppearance.MouseDownBackColor =  Color.Green ;
+            deleteNoteButton.FlatAppearance.MouseOverBackColor =  Color.PaleGreen ;
+            deleteNoteButton.FlatStyle =  FlatStyle.Flat ;
+            deleteNoteButton.Font =  new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point) ;
+            deleteNoteButton.ForeColor =  Color.Green ;
+            deleteNoteButton.Location =  new Point(533, 80) ;
+            deleteNoteButton.Name =  "deleteNoteButton" ;
+            deleteNoteButton.Size =  new Size(163, 37) ;
+            deleteNoteButton.TabIndex =  15 ;
+            deleteNoteButton.TabStop =  false ;
+            deleteNoteButton.Text =  "Delete Note" ;
+            deleteNoteButton.UseVisualStyleBackColor =  true ;
+            deleteNoteButton.Click +=  deleteNoteButton_Click ;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(714, 491);
-            this.Controls.Add(this.attachListBox);
-            this.Controls.Add(this.newNoteButton);
-            this.Controls.Add(this.editNoteButton);
-            this.Controls.Add(this.lastDateLabel);
-            this.Controls.Add(this.lastDateOnLabel);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.attachLabel);
-            this.Controls.Add(this.noteBodyTextBox);
-            this.Controls.Add(this.noteBodyLabel);
-            this.Controls.Add(this.titleTextBox);
-            this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.selectNoteDropDown);
-            this.Controls.Add(this.selectNoteLabel);
-            this.Controls.Add(this.headerLabel);
-            this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.MaximizeBox = false;
-            this.MdiChildrenMinimizedAnchorBottom = false;
-            this.MinimizeBox = false;
-            this.Name = "MainForm";
-            this.Text = "Noteman";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions =  new SizeF(12F, 30F) ;
+            AutoScaleMode =  AutoScaleMode.Font ;
+            BackColor =  Color.White ;
+            ClientSize =  new Size(714, 491) ;
+            Controls.Add(deleteNoteButton);
+            Controls.Add(attachListBox);
+            Controls.Add(newNoteButton);
+            Controls.Add(editNoteButton);
+            Controls.Add(lastDateLabel);
+            Controls.Add(lastDateOnLabel);
+            Controls.Add(button1);
+            Controls.Add(attachLabel);
+            Controls.Add(noteBodyTextBox);
+            Controls.Add(noteBodyLabel);
+            Controls.Add(titleTextBox);
+            Controls.Add(titleLabel);
+            Controls.Add(selectNoteDropDown);
+            Controls.Add(selectNoteLabel);
+            Controls.Add(headerLabel);
+            Font =  new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point) ;
+            FormBorderStyle =  FormBorderStyle.FixedToolWindow ;
+            Icon =  (Icon) resources.GetObject("$this.Icon")  ;
+            Margin =  new Padding(5, 6, 5, 6) ;
+            MaximizeBox =  false ;
+            MdiChildrenMinimizedAnchorBottom =  false ;
+            MinimizeBox =  false ;
+            Name =  "MainForm" ;
+            StartPosition =  FormStartPosition.CenterScreen ;
+            Text =  "Noteman" ;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -249,5 +276,6 @@
         private Button newNoteButton;
         private Button button1;
         private ListBox attachListBox;
+        private Button deleteNoteButton;
     }
 }
