@@ -10,6 +10,7 @@ namespace NotemanLibrary
 {
     public static class GlobalConfig
     {
+
         public static List<IDataConnection> Connections
         {
             get; private set;

@@ -13,6 +13,7 @@ namespace NotemanLibrary.DataAccess
         NoteModel ReadNote(int id);
         NoteModel[] GetAllNotes();
         void DeleteNote( NoteModel model );
-        int RowsNumber();
+        int NotesNumber();
+
     }
 }

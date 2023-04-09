@@ -30,6 +30,7 @@ namespace MainForm
         {
             if (ValidateDatabase())
             {
+                // TODO - make a custom method to populate dropdown datasource
                 NoteModel[] notesArray = { };
                 foreach (IDataConnection db in GlobalConfig.Connections)
                 {
@@ -59,10 +60,13 @@ namespace MainForm
             switch (dr)
             {
                 case DialogResult.Yes:
+                    NoteModel[] notesArray = { };
                     foreach (IDataConnection db in GlobalConfig.Connections)
                     {
                         db.DeleteNote(model);
+                        notesArray = db.GetAllNotes();
                     }
+                    selectNoteDropDown.DataSource= notesArray;
                     titleTextBox.Clear();
                     noteBodyTextBox.Clear();
                     lastDateLabel.Text = "";
@@ -78,7 +82,7 @@ namespace MainForm
             int rows;
             foreach (IDataConnection db in GlobalConfig.Connections)
             {
-                rows = db.RowsNumber();
+                rows = db.NotesNumber();
                 if (rows <= 0)
                 {
                     output = false;

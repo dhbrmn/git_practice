@@ -37,6 +37,11 @@ namespace NotemanLibrary.DataAccess
                 return model;
             }
         }
+        /// <summary>
+        /// Reads a note from the database using it's ID parameter
+        /// </summary>
+        /// <param name="id">Unique identifier of a note</param>
+        /// <returns>A stored note as NoteModel</returns>
         public NoteModel ReadNote( int id )
         {
             using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
@@ -55,6 +60,10 @@ namespace NotemanLibrary.DataAccess
         //        // TODO - Make it so it can update an already saved note with new parameters
         //    }
         //}
+        /// <summary>
+        /// Deletes a stored note(row) from the databse
+        /// </summary>
+        /// <param name="model">NoteModel of the note entry that will be deleted</param>
         public void DeleteNote( NoteModel model )
         {
             using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
@@ -64,17 +73,24 @@ namespace NotemanLibrary.DataAccess
                 connection.Execute("DELETE FROM Notes WHERE ID = @ID", n, commandType: CommandType.Text);
             }
         }
+        /// <summary>
+        /// Calls a query to read all stored notes in the databse
+        /// </summary>
+        /// <returns>Array of all stored notes in the database</returns>
         public NoteModel[] GetAllNotes()
         {
             using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
             {
-                int rows = RowsNumber();
+                int rows = NotesNumber();
                 var notesArray = connection.Query<NoteModel>("SELECT * FROM Notes", commandType: CommandType.Text).ToArray();
                 return notesArray;
             }
         }
-
-        public int RowsNumber()
+        /// <summary>
+        /// Method aquires the number of stored notes in the database
+        /// </summary>
+        /// <returns>Number of stored notes as an integer32</returns>
+        public int NotesNumber()
         {
             using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
             {
