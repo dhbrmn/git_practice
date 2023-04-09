@@ -26,7 +26,7 @@ namespace MainForm
         {
             if (ValidateForm())
             {
-                NoteModel model = new(titleTextBox.Text, noteBodyTextBox.Text/*, attachListBox.Items*/);
+                NoteModel model = new(titleTextBox.Text, noteBodyTextBox.Text);
 
                 foreach (IDataConnection db in GlobalConfig.Connections)
                 {
@@ -34,15 +34,12 @@ namespace MainForm
                 }
 
                 MessageBox.Show("Note saved.");
-
-                titleTextBox.Text = "New Note";
-                noteBodyTextBox.Text = "";
+                Close();
             }
             else
             {
                 MessageBox.Show("This note has no title. Please input a title.");
             }
-            Close();
         }
 
         private bool ValidateForm()

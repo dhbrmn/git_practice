@@ -52,16 +52,26 @@ namespace NotemanLibrary.DataAccess
                 return model;
             }
         }
-        //public NoteModel UpdateNote( NoteModel model )
-        //{
-        //    using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
-        //    {
-        //        var n = new DynamicParameters();
-        //        // TODO - Make it so it can update an already saved note with new parameters
-        //    }
-        //}
         /// <summary>
-        /// Deletes a stored note(row) from the databse
+        /// Updates an edited note entry
+        /// </summary>
+        /// <param name="model">New note model that has been edited</param>
+        public void UpdateNote( NoteModel model )
+        {
+            using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
+            {
+                var n = new DynamicParameters();
+
+                n.Add("@ID", model.ID);
+                n.Add("@Title", model.Title);
+                n.Add("@Body", model.Body);
+                n.Add("@Date", model.Date);
+
+                connection.Execute("UPDATE Notes SET Title = @Title, Body = @Body, Date = @Date WHERE ID = @ID", n, commandType: CommandType.Text);
+            }
+        }
+        /// <summary>
+        /// Deletes a stored note(row) from the database
         /// </summary>
         /// <param name="model">NoteModel of the note entry that will be deleted</param>
         public void DeleteNote( NoteModel model )

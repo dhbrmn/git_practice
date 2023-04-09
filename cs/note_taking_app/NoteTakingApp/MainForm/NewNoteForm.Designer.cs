@@ -79,7 +79,6 @@
             titleTextBox.Name =  "titleTextBox" ;
             titleTextBox.Size =  new Size(598, 35) ;
             titleTextBox.TabIndex =  8 ;
-            titleTextBox.Text =  "New Note" ;
             // 
             // titleLabel
             // 

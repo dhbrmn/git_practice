@@ -84,6 +84,7 @@
             cancelNewNoteButton.TabIndex =  26 ;
             cancelNewNoteButton.Text =  "Cancel" ;
             cancelNewNoteButton.UseVisualStyleBackColor =  true ;
+            cancelNewNoteButton.Click +=  cancelNewNoteButton_Click ;
             // 
             // saveNoteButton
             // 
@@ -99,6 +100,7 @@
             saveNoteButton.TabIndex =  25 ;
             saveNoteButton.Text =  "Save Note" ;
             saveNoteButton.UseVisualStyleBackColor =  true ;
+            saveNoteButton.Click +=  saveNoteButton_Click ;
             // 
             // browseAttachButton
             // 
@@ -206,6 +208,7 @@
             Name =  "EditNoteForm" ;
             StartPosition =  FormStartPosition.CenterScreen ;
             Text =  "Edit Note" ;
+            Load +=  EditNoteForm_Load ;
             ResumeLayout(false);
             PerformLayout();
         }

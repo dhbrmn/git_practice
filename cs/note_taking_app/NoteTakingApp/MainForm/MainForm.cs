@@ -9,6 +9,7 @@ namespace MainForm
 {
     public partial class MainForm : Form
     {
+        public static NoteModel curentModel = new NoteModel();
         public MainForm()
         {
             InitializeComponent();
@@ -45,17 +46,16 @@ namespace MainForm
             }
         }
 
-        private void selectNoteDropDown_SelectedIndexChanged( object sender, EventArgs e )
+        public void selectNoteDropDown_SelectedIndexChanged( object sender, EventArgs e )
         {
-            NoteModel model = (NoteModel)selectNoteDropDown.SelectedItem;
-            titleTextBox.Text = model.Title;
-            noteBodyTextBox.Text = model.Body;
-            lastDateLabel.Text = model.Date;
+            curentModel = (NoteModel)selectNoteDropDown.SelectedItem;
+            titleTextBox.Text = curentModel.Title;
+            noteBodyTextBox.Text = curentModel.Body;
+            lastDateLabel.Text = curentModel.Date;
         }
 
         private void deleteNoteButton_Click( object sender, EventArgs e )
         {
-            NoteModel model = (NoteModel)selectNoteDropDown.SelectedItem;
             DialogResult dr = MessageBox.Show("Really delete note? It will be gone forever.", "Are you sure?", MessageBoxButtons.YesNo);
             switch (dr)
             {
@@ -63,7 +63,7 @@ namespace MainForm
                     NoteModel[] notesArray = { };
                     foreach (IDataConnection db in GlobalConfig.Connections)
                     {
-                        db.DeleteNote(model);
+                        db.DeleteNote(curentModel);
                         notesArray = db.GetAllNotes();
                     }
                     selectNoteDropDown.DataSource= notesArray;
