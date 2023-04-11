@@ -3,6 +3,7 @@ using NotemanLibrary.DataAccess;
 using NotemanLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -17,6 +18,7 @@ namespace MainForm
     // TODO - Add functionality for attachments
     public partial class NewNoteForm : Form
     {
+        public static ObservableCollection<AttachmentModel> Attachments = new ObservableCollection<AttachmentModel>();
         public NewNoteForm()
         {
             InitializeComponent();
@@ -31,6 +33,17 @@ namespace MainForm
                 foreach (IDataConnection db in GlobalConfig.Connections)
                 {
                     db.CreateNote(model);
+                }
+                if (Attachments?.Any() ?? false)
+                {
+                    foreach (AttachmentModel attachment in Attachments)
+                    {
+                        attachment.NoteId = model.ID;
+                        foreach (IDataConnection db in GlobalConfig.Connections)
+                        {
+                            db.StoreAttach(attachment);
+                        }
+                    }
                 }
 
                 MessageBox.Show("Note saved.");
@@ -66,5 +79,22 @@ namespace MainForm
                     break;
             }
         }
+
+        private void browseAttachButton_Click( object sender, EventArgs e )
+        {
+            browseAttachDialog.InitialDirectory = "%USERPROFILE%";
+            string path = "";
+            string fileName = "";
+            if (browseAttachDialog.ShowDialog() == DialogResult.OK)
+            {
+                path = browseAttachDialog.FileName;
+            }
+            AttachmentModel attachment = new AttachmentModel(path);
+            Attachments.Add(attachment);
+            attachListBox.DataSource = null;
+            attachListBox.DataSource = Attachments;
+            attachListBox.DisplayMember = "Name";
+        }
+
     }
 }

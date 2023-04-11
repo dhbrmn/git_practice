@@ -15,6 +15,7 @@ namespace NotemanLibrary.DataAccess
         void DeleteNote( NoteModel model );
         int NotesNumber();
         void UpdateNote(NoteModel model );
+        void StoreAttach( AttachmentModel attachment );
 
     }
 }

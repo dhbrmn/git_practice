@@ -126,6 +126,7 @@
             browseAttachButton.Text =  "Browse" ;
             browseAttachButton.TextImageRelation =  TextImageRelation.TextAboveImage ;
             browseAttachButton.UseVisualStyleBackColor =  true ;
+            browseAttachButton.Click +=  browseAttachButton_Click ;
             // 
             // cancelNewNoteButton
             // 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,9 +17,16 @@ namespace NotemanLibrary.Models
         get; set; 
         }
         /// <summary>
+        /// Name of the file
+        /// </summary>
+        public string Name
+        {
+        get; set; 
+        }
+        /// <summary>
         /// Path to file stored as string
         /// </summary>
-        public string Path
+        public string AttachPath
         {
         get; set; 
         }
@@ -43,13 +51,28 @@ namespace NotemanLibrary.Models
         {
         }
         /// <summary>
+        /// MEthod to set an attachment model without note.ID
+        /// </summary>
+        /// <param name="path">Attachment path</param>
+        public AttachmentModel( string path )
+        {
+            AttachPath = path;
+            string name = Path.GetFileName(path);
+            Name = name;
+            string date = DateTime.Now.ToString();
+            Date = date;
+
+        }
+        /// <summary>
         /// Method to set a model linking the file path and NoteModel
         /// </summary>
         /// <param name="path">File path</param>
         /// <param name="note">NoteModel of the created note</param>
         public AttachmentModel( string path, NoteModel note )
         {
-            Path = path;
+            AttachPath = path;
+            string name = Path.GetFileName(path);
+            Name = name;
             NoteId = note.ID;
             string date = DateTime.Now.ToString();
             Date = date;

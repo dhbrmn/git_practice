@@ -109,5 +109,8 @@ namespace NotemanLibrary.DataAccess
                 return rows;
             }
         }
+        public void StoreAttach(AttachmentModel attachment)
+        {
+        }
     }
 }
