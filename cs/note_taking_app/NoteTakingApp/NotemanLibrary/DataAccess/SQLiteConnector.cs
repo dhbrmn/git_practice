@@ -109,8 +109,18 @@ namespace NotemanLibrary.DataAccess
                 return rows;
             }
         }
-        public void StoreAttach(AttachmentModel attachment)
+        public void StoreAttach( AttachmentModel attachment )
         {
+            using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
+            {
+                var n = new DynamicParameters();
+
+                n.Add("@NoteID", attachment.NoteId);
+                n.Add("@Name", attachment.Name);
+                n.Add("@AttachmentPath", attachment.AttachPath);
+
+                connection.Execute("INSERT INTO Attachments (NoteID, Name, AttachmentPath) VALUES (@NoteID, @Name, @AttachmentPath)", n, commandType: CommandType.Text);
+            }
         }
     }
 }
