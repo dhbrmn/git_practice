@@ -26,7 +26,7 @@ namespace NotemanLibrary.Models
         /// <summary>
         /// Path to file stored as string
         /// </summary>
-        public string AttachPath
+        public string AttachmentPath
         {
         get; set; 
         }
@@ -51,12 +51,12 @@ namespace NotemanLibrary.Models
         {
         }
         /// <summary>
-        /// MEthod to set an attachment model without note.ID
+        /// Method to set an attachment model without note.ID
         /// </summary>
         /// <param name="path">Attachment path</param>
         public AttachmentModel( string path )
         {
-            AttachPath = path;
+            AttachmentPath = path;
             string name = Path.GetFileName(path);
             Name = name;
             string date = DateTime.Now.ToString();
@@ -70,7 +70,7 @@ namespace NotemanLibrary.Models
         /// <param name="note">NoteModel of the created note</param>
         public AttachmentModel( string path, NoteModel note )
         {
-            AttachPath = path;
+            AttachmentPath = path;
             string name = Path.GetFileName(path);
             Name = name;
             NoteId = note.ID;

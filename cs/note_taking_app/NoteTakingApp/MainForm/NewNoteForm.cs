@@ -15,7 +15,6 @@ using System.Windows.Forms;
 
 namespace MainForm
 {
-    // TODO - Add functionality for attachments
     public partial class NewNoteForm : Form
     {
         public static ObservableCollection<AttachmentModel> Attachments = new ObservableCollection<AttachmentModel>();
@@ -96,5 +95,13 @@ namespace MainForm
             attachListBox.DisplayMember = "Name";
         }
 
+        private void deleteAttachButton_Click( object sender, EventArgs e )
+        {
+            int attachIndex = attachListBox.SelectedIndex;
+            Attachments.RemoveAt( attachIndex );
+            attachListBox.DataSource = null;
+            attachListBox.DataSource = Attachments;
+            attachListBox.DisplayMember = "Name";
+        }
     }
 }

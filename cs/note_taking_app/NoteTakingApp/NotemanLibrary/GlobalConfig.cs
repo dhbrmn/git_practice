@@ -19,7 +19,6 @@ namespace NotemanLibrary
         {
             if (database)
             {
-                //TODO - Create the SQLite connection
                 SQLiteConnector sql = new SQLiteConnector();
                 Connections.Add( sql );
             }

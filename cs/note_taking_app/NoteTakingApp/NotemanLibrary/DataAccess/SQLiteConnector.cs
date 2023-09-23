@@ -83,6 +83,7 @@ namespace NotemanLibrary.DataAccess
                 connection.Execute("DELETE FROM Notes WHERE ID = @ID", n, commandType: CommandType.Text);
             }
         }
+        //TODO - create a custom function to delete notes with attachments
         /// <summary>
         /// Calls a query to read all stored notes in the databse
         /// </summary>
@@ -117,9 +118,37 @@ namespace NotemanLibrary.DataAccess
 
                 n.Add("@NoteID", attachment.NoteId);
                 n.Add("@Name", attachment.Name);
-                n.Add("@AttachmentPath", attachment.AttachPath);
+                n.Add("@AttachmentPath", attachment.AttachmentPath);
 
                 connection.Execute("INSERT INTO Attachments (NoteID, Name, AttachmentPath) VALUES (@NoteID, @Name, @AttachmentPath)", n, commandType: CommandType.Text);
+            }
+        }
+        public AttachmentModel[] GetAllAttachments()
+        {
+            using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
+            {
+                int rows = AttachmentNumber();
+                var attachmentsArray = connection.Query<AttachmentModel>("SELECT * FROM Attachments", commandType: CommandType.Text).ToArray();
+                return attachmentsArray;
+            }
+        }
+        public int AttachmentNumber()
+        {
+            using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
+            {
+                Int64 rowsInt64 = (Int64)connection.ExecuteScalar("SELECT COUNT (*) FROM Attachments");
+                int rows = (int)rowsInt64;
+                return rows;
+            }
+        }
+        public AttachmentModel ReadAttachment( int id )
+        {
+            using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
+            {
+                var input = new DynamicParameters();
+                input.Add("@NoteID", id);
+                AttachmentModel model = (AttachmentModel)connection.QuerySingle<AttachmentModel>("SELECT * FROM Attachments WHERE ID = @NoteID", input, commandType: CommandType.Text);
+                return model;
             }
         }
     }

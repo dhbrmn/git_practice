@@ -4,12 +4,18 @@ using NotemanLibrary.DataAccess;
 using NotemanLibrary.Models;
 using System.Reflection;
 using System.Linq;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
+
 
 namespace MainForm
 {
     public partial class MainForm : Form
     {
         public static NoteModel curentModel = new NoteModel();
+        public static AttachmentModel[] attachmentsArray = { };
+        public static ObservableCollection<AttachmentModel> Attachments = new ObservableCollection<AttachmentModel>();
         public MainForm()
         {
             InitializeComponent();
@@ -31,14 +37,21 @@ namespace MainForm
         {
             if (ValidateDatabase())
             {
-                // TODO - make a custom method to populate dropdown datasource
                 NoteModel[] notesArray = { };
+
                 foreach (IDataConnection db in GlobalConfig.Connections)
                 {
                     notesArray = db.GetAllNotes();
+                    attachmentsArray = db.GetAllAttachments();
+
                 }
                 selectNoteDropDown.DataSource = notesArray;
                 selectNoteDropDown.DisplayMember = "Title";
+                Attachments.Clear();
+                attachListBox.DataSource = null;
+                titleTextBox.Text = null;
+                noteBodyTextBox.Text = null;
+                lastDateLabel.Text = null;
             }
             else
             {
@@ -52,6 +65,16 @@ namespace MainForm
             titleTextBox.Text = curentModel.Title;
             noteBodyTextBox.Text = curentModel.Body;
             lastDateLabel.Text = curentModel.Date;
+            foreach (AttachmentModel attachmentModel in attachmentsArray)
+            {
+                if (curentModel.ID == attachmentModel.NoteId)
+                {
+                    Attachments.Add(attachmentModel);
+                }
+            }
+            attachListBox.DataSource = null;
+            attachListBox.DataSource = Attachments;
+            attachListBox.DisplayMember = "Name";
         }
 
         private void deleteNoteButton_Click( object sender, EventArgs e )
@@ -66,7 +89,7 @@ namespace MainForm
                         db.DeleteNote(curentModel);
                         notesArray = db.GetAllNotes();
                     }
-                    selectNoteDropDown.DataSource= notesArray;
+                    selectNoteDropDown.DataSource = notesArray;
                     titleTextBox.Clear();
                     noteBodyTextBox.Clear();
                     lastDateLabel.Text = "";
@@ -91,5 +114,19 @@ namespace MainForm
             return output;
         }
 
+        private void openAttachmentButton_Click( object sender, EventArgs e )
+        {
+            int attachIndex = attachListBox.SelectedIndex;
+            AttachmentModel attachment = Attachments[attachIndex];
+            string filePath = attachment.AttachmentPath;
+            if(File.Exists(filePath))
+            {
+                Process.Start("explorer.exe",filePath);
+            }
+            else
+            {
+                MessageBox.Show("File does not exist.");
+            }
+        }
     }
 }

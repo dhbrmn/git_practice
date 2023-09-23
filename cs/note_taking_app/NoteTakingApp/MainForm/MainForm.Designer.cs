@@ -43,7 +43,7 @@ namespace MainForm
             lastDateLabel =  new Label() ;
             editNoteButton =  new Button() ;
             newNoteButton =  new Button() ;
-            button1 =  new Button() ;
+            openAttachmentButton =  new Button() ;
             attachListBox =  new ListBox() ;
             deleteNoteButton =  new Button() ;
             SuspendLayout();
@@ -184,20 +184,21 @@ namespace MainForm
             newNoteButton.UseVisualStyleBackColor =  true ;
             newNoteButton.Click +=  newNoteButton_Click ;
             // 
-            // button1
+            // openAttachmentButton
             // 
-            button1.FlatAppearance.BorderColor =  Color.Green ;
-            button1.FlatAppearance.MouseDownBackColor =  Color.Green ;
-            button1.FlatAppearance.MouseOverBackColor =  Color.PaleGreen ;
-            button1.FlatStyle =  FlatStyle.Flat ;
-            button1.Font =  new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point) ;
-            button1.ForeColor =  Color.Green ;
-            button1.Location =  new Point(501, 275) ;
-            button1.Name =  "button1" ;
-            button1.Size =  new Size(163, 37) ;
-            button1.TabIndex =  9 ;
-            button1.Text =  "Open Selected" ;
-            button1.UseVisualStyleBackColor =  true ;
+            openAttachmentButton.FlatAppearance.BorderColor =  Color.Green ;
+            openAttachmentButton.FlatAppearance.MouseDownBackColor =  Color.Green ;
+            openAttachmentButton.FlatAppearance.MouseOverBackColor =  Color.PaleGreen ;
+            openAttachmentButton.FlatStyle =  FlatStyle.Flat ;
+            openAttachmentButton.Font =  new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point) ;
+            openAttachmentButton.ForeColor =  Color.Green ;
+            openAttachmentButton.Location =  new Point(501, 275) ;
+            openAttachmentButton.Name =  "Open Attachment Button" ;
+            openAttachmentButton.Size =  new Size(163, 37) ;
+            openAttachmentButton.TabIndex =  9 ;
+            openAttachmentButton.Text =  "Open Selected" ;
+            openAttachmentButton.UseVisualStyleBackColor =  true ;
+            openAttachmentButton.Click += openAttachmentButton_Click;
             // 
             // attachListBox
             // 
@@ -237,7 +238,7 @@ namespace MainForm
             Controls.Add(editNoteButton);
             Controls.Add(lastDateLabel);
             Controls.Add(lastDateOnLabel);
-            Controls.Add(button1);
+            Controls.Add(openAttachmentButton);
             Controls.Add(attachLabel);
             Controls.Add(noteBodyTextBox);
             Controls.Add(noteBodyLabel);
@@ -274,7 +275,7 @@ namespace MainForm
         private Label lastDateLabel;
         private Button editNoteButton;
         private Button newNoteButton;
-        private Button button1;
+        private Button openAttachmentButton;
         private ListBox attachListBox;
         private Button deleteNoteButton;
     }

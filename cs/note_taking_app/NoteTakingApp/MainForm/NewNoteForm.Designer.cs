@@ -180,6 +180,7 @@
             deleteAttachButton.Text =  "Remove" ;
             deleteAttachButton.TextImageRelation =  TextImageRelation.TextAboveImage ;
             deleteAttachButton.UseVisualStyleBackColor =  true ;
+            deleteAttachButton.Click +=  deleteAttachButton_Click ;
             // 
             // NewNoteForm
             // 

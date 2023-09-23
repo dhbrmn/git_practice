@@ -14,8 +14,8 @@ namespace MainForm
 
             // Initialize database connection
             NotemanLibrary.GlobalConfig.InitializeConnections(true);
-            Application.Run(new NewNoteForm());
-            //Application.Run(new MainForm());
+            // Run app
+            Application.Run(new MainForm());
         }
     }
 }
