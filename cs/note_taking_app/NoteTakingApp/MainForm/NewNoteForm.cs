@@ -46,6 +46,7 @@ namespace MainForm
                 }
 
                 MessageBox.Show("Note saved.");
+                Attachments.Clear();
                 Close();
             }
             else

@@ -17,6 +17,7 @@ namespace NotemanLibrary.DataAccess
         void UpdateNote(NoteModel model );
         void StoreAttach( AttachmentModel attachment );
         AttachmentModel[] GetAllAttachments( );    
+        void DeleteNoteWithAttachment (NoteModel model );
 
     }
 }

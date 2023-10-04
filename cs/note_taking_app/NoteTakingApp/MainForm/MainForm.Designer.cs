@@ -79,7 +79,7 @@ namespace MainForm
             selectNoteDropDown.Size =  new Size(337, 38) ;
             selectNoteDropDown.TabIndex =  2 ;
             selectNoteDropDown.DropDown +=  selectNoteDropDown_DropDown ;
-            selectNoteDropDown.SelectedIndexChanged +=  selectNoteDropDown_SelectedIndexChanged ;
+            selectNoteDropDown.SelectionChangeCommitted +=  selectNoteDropDown_SelectionChangeCommited ;
             // 
             // titleLabel
             // 

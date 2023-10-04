@@ -84,6 +84,16 @@ namespace NotemanLibrary.DataAccess
             }
         }
         //TODO - create a custom function to delete notes with attachments
+        public void DeleteNoteWithAttachment( NoteModel model )
+        {
+            using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
+            {
+                var n = new DynamicParameters();
+                n.Add("@ID", model.ID);
+                connection.Execute("DELETE FROM Attachments WHERE NoteID = @ID", n, commandType: CommandType.Text);
+                connection.Execute("DELETE FROM Notes WHERE ID = @ID", n, commandType: CommandType.Text);
+            }
+        }
         /// <summary>
         /// Calls a query to read all stored notes in the databse
         /// </summary>
