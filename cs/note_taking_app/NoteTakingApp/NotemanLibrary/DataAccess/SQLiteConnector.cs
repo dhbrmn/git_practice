@@ -97,6 +97,10 @@ namespace NotemanLibrary.DataAccess
                 connection.Execute("DELETE FROM Notes WHERE ID = @ID", n, commandType: CommandType.Text);
             }
         }
+        /// <summary>
+        /// Deletes a single attachment using its ID
+        /// </summary>
+        /// <param name="attachment">AttachmentModel with unique ID</param>
         public void DeleteAttachment( AttachmentModel attachment )
         {
             using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))

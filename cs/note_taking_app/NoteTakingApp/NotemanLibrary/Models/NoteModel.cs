@@ -40,17 +40,27 @@ namespace NotemanLibrary.Models
         {
             get; set;
         }
+        /// <summary>
+        /// Generic NoteModel method
+        /// </summary>
         public NoteModel()
         {
         }
-
+        /// <summary>
+        /// NoteModel method using the title
+        /// </summary>
+        /// <param name="title">String input used for the title</param>
         public NoteModel(string title)
         {
             Title = title;
             string date = DateTime.Now.ToString();
             Date = date;
         }
-
+        /// <summary>
+        /// NoteModel method that fully populates all fields
+        /// </summary>
+        /// <param name="title">String input used for the title</param>
+        /// <param name="body">String input used for the body/content of the note</param>
         public NoteModel(string title, string body)
         {
            Title = title;

@@ -1,12 +1,8 @@
-using Microsoft.Data.Sqlite;
 using NotemanLibrary;
 using NotemanLibrary.DataAccess;
 using NotemanLibrary.Models;
-using System.Reflection;
-using System.Linq;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.IO;
 
 
 namespace MainForm
@@ -21,7 +17,7 @@ namespace MainForm
         /// <summary>
         /// Placeholder for array of attachments read from the database.
         /// </summary>
-        public static AttachmentModel[] attachmentsArray = { };
+        private AttachmentModel[] attachmentsArray = { };
 
         /// <summary>
         /// Place holder for collection of attachments saved in buffer while viewing notes.
@@ -38,7 +34,7 @@ namespace MainForm
         /// <summary>
         /// Function to clear out UI
         /// </summary>
-        private void ClearUI()
+        private void ClearUi()
         {
             Attachments.Clear();
             selectNoteDropDown.DataSource = null;
@@ -55,7 +51,7 @@ namespace MainForm
         {
             NewNoteForm newNoteForm = new NewNoteForm();
             newNoteForm.ShowDialog();
-            ClearUI();
+            ClearUi();
         }
 
         /// <summary>
@@ -68,7 +64,7 @@ namespace MainForm
             {
                 EditNoteForm editNoteForm = new EditNoteForm();
                 editNoteForm.ShowDialog();
-                ClearUI();
+                ClearUi();
             }
             else
             {
@@ -93,7 +89,7 @@ namespace MainForm
                 }
 
                 //Functions for UI behaviour
-                ClearUI();
+                ClearUi();
                 selectNoteDropDown.DataSource = notesArray;
                 selectNoteDropDown.DisplayMember = "Title";
             }
@@ -155,7 +151,7 @@ namespace MainForm
                             notesArray = db.GetAllNotes();
                         }
                     }
-                    ClearUI();
+                    ClearUi();
                     break;
 
                 case DialogResult.No:
