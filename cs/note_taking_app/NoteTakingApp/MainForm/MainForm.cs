@@ -35,7 +35,19 @@ namespace MainForm
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Function to clear out UI
+        /// </summary>
+        private void ClearUI()
+        {
+            Attachments.Clear();
+            selectNoteDropDown.DataSource = null;
+            attachListBox.DataSource = null;
+            titleTextBox.Text = null;
+            noteBodyTextBox.Text = null;
+            lastDateLabel.Text = null;
 
+        }
         /// <summary>
         /// When clicking the newNoteButton opens the NewNoteForm in a new window.
         /// </summary>
@@ -43,6 +55,7 @@ namespace MainForm
         {
             NewNoteForm newNoteForm = new NewNoteForm();
             newNoteForm.ShowDialog();
+            ClearUI();
         }
 
         /// <summary>
@@ -55,6 +68,7 @@ namespace MainForm
             {
                 EditNoteForm editNoteForm = new EditNoteForm();
                 editNoteForm.ShowDialog();
+                ClearUI();
             }
             else
             {
@@ -79,13 +93,9 @@ namespace MainForm
                 }
 
                 //Functions for UI behaviour
+                ClearUI();
                 selectNoteDropDown.DataSource = notesArray;
                 selectNoteDropDown.DisplayMember = "Title";
-                Attachments.Clear();
-                attachListBox.DataSource = null;
-                titleTextBox.Text = null;
-                noteBodyTextBox.Text = null;
-                lastDateLabel.Text = null;
             }
             else
             {
@@ -98,15 +108,18 @@ namespace MainForm
         /// </summary>
         public void selectNoteDropDown_SelectionChangeCommited( object sender, EventArgs e )
         {
-            curentModel = (NoteModel)selectNoteDropDown.SelectedItem;
-            titleTextBox.Text = curentModel.Title;
-            noteBodyTextBox.Text = curentModel.Body;
-            lastDateLabel.Text = curentModel.Date;
-            foreach (AttachmentModel attachmentModel in attachmentsArray)
+            if (ValidateDatabase())
             {
-                if (curentModel.ID == attachmentModel.NoteId)
+                curentModel = (NoteModel)selectNoteDropDown.SelectedItem;
+                titleTextBox.Text = curentModel.Title;
+                noteBodyTextBox.Text = curentModel.Body;
+                lastDateLabel.Text = curentModel.Date;
+                foreach (AttachmentModel attachmentModel in attachmentsArray)
                 {
-                    Attachments.Add(attachmentModel);
+                    if (curentModel.ID == attachmentModel.NoteId)
+                    {
+                        Attachments.Add(attachmentModel);
+                    }
                 }
             }
 
@@ -142,13 +155,7 @@ namespace MainForm
                             notesArray = db.GetAllNotes();
                         }
                     }
-
-                    //Functions for UI behaviour
-                    selectNoteDropDown.DataSource = null;
-                    attachListBox.DataSource = null;
-                    titleTextBox.Text = null;
-                    noteBodyTextBox.Text = null;
-                    lastDateLabel.Text = null;
+                    ClearUI();
                     break;
 
                 case DialogResult.No:
