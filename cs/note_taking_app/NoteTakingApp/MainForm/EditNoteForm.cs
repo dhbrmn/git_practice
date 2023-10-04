@@ -10,12 +10,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.ObjectModel;
+using System.Reflection;
 
 namespace MainForm
 {
     public partial class EditNoteForm : Form
     {
         public static NoteModel editModel = new NoteModel();
+        public static ObservableCollection<AttachmentModel> Attachments = new ObservableCollection<AttachmentModel>();
+        public static ObservableCollection<AttachmentModel> OldAttachments = new ObservableCollection<AttachmentModel>();
+
         public EditNoteForm()
         {
             InitializeComponent();
@@ -26,6 +31,13 @@ namespace MainForm
             editModel = MainForm.curentModel;
             titleTextBox.Text = editModel.Title;
             noteBodyTextBox.Text = editModel.Body;
+            foreach (AttachmentModel attachment in MainForm.Attachments )
+            {
+                OldAttachments.Add( attachment );
+                Attachments.Add( attachment );
+            }
+            attachListBox.DataSource = Attachments;
+            attachListBox.DisplayMember = "Name";
         }
 
         private void cancelNewNoteButton_Click( object sender, EventArgs e )
@@ -53,8 +65,29 @@ namespace MainForm
                 {
                     db.UpdateNote(editModel);
                 }
+                if (OldAttachments != Attachments)
+                {
+                    foreach (AttachmentModel attachment in OldAttachments)
+                    {
+                        foreach (IDataConnection db in GlobalConfig.Connections)
+                        {
+                            db.DeleteAttachment(attachment);
+                        }
+                    }
+
+                    foreach (AttachmentModel attachment in Attachments)
+                    {
+                        attachment.NoteId = editModel.ID;
+                        foreach (IDataConnection db in GlobalConfig.Connections)
+                        {
+                            db.StoreAttach(attachment);
+                        }
+                    }
+                }
 
                 MessageBox.Show("Note edited.");
+                OldAttachments.Clear();
+                Attachments.Clear();
                 Close();
             }
             else
@@ -68,11 +101,37 @@ namespace MainForm
             bool output = true;
             bool oldTitle = titleTextBox.Text == editModel.Title;
             bool oldBody = noteBodyTextBox.Text == editModel.Body;
-            if (oldTitle && oldBody)
+            bool oldAttachments = Attachments == OldAttachments;
+            if (oldTitle && oldBody && oldAttachments)
             {
                 output = false;
             }
             return output;
+        }
+
+        private void deleteAttachButton_Click( object sender, EventArgs e )
+        {
+            int attachIndex = attachListBox.SelectedIndex;
+            Attachments.RemoveAt(attachIndex);
+            attachListBox.DataSource = null;
+            attachListBox.DataSource = Attachments;
+            attachListBox.DisplayMember = "Name";
+        }
+
+        private void browseAttachButton_Click( object sender, EventArgs e )
+        {
+            browseAttachDialog.InitialDirectory = "%USERPROFILE%";
+            string path = "";
+            string fileName = "";
+            if (browseAttachDialog.ShowDialog() == DialogResult.OK)
+            {
+                path = browseAttachDialog.FileName;
+            }
+            AttachmentModel attachment = new AttachmentModel(path);
+            Attachments.Add(attachment);
+            attachListBox.DataSource = null;
+            attachListBox.DataSource = Attachments;
+            attachListBox.DisplayMember = "Name";
         }
     }
 }

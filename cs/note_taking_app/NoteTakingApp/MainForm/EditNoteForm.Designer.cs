@@ -69,6 +69,7 @@
             deleteAttachButton.Text =  "Remove" ;
             deleteAttachButton.TextImageRelation =  TextImageRelation.TextAboveImage ;
             deleteAttachButton.UseVisualStyleBackColor =  true ;
+            deleteAttachButton.Click +=  deleteAttachButton_Click ;
             // 
             // cancelNewNoteButton
             // 
@@ -117,6 +118,7 @@
             browseAttachButton.Text =  "Browse" ;
             browseAttachButton.TextImageRelation =  TextImageRelation.TextAboveImage ;
             browseAttachButton.UseVisualStyleBackColor =  true ;
+            browseAttachButton.Click +=  browseAttachButton_Click ;
             // 
             // attachListBox
             // 
