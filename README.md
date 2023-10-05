@@ -19,6 +19,7 @@ This is a practice repository while I'm learning to code and use Git (and GitHub
 
 ## Learning Series : Beginner Level
 * I have started a new series for myself today. I will be coding begginer level apps in order to raise my skill with C#. Wish me luck :smile: - Mar 06, 2023
+* So I took a little time off from coding because there were some things in life that I had to take care of. But no worries because I am back now :smile: - Apr, 2023/Oct, 2023
 
 Anyway, I'll keep you guys posted on how I progress through my learning journey.
 
