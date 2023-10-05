@@ -21,5 +21,6 @@ namespace NotemanLibrary.DataAccess
         AttachmentModel ReadAttachment( int id );
         int AttachmentNumber();
         void DeleteAttachment( AttachmentModel attachment );
+        void CreateDb();
     }
 }

@@ -6,11 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="NoteStorage.sqlite3" />
-  </ItemGroup>
 
   <ItemGroup>
     <Content Include="NoteStorage.sqlite3">
@@ -19,8 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.4" />
-    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />
+    <PackageReference Include="Dapper" Version="2.1.4" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.11" />
+    <PackageReference Include="SQLite" Version="3.13.0" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
   </ItemGroup>
 
   <ItemGroup>

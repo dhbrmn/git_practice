@@ -30,6 +30,16 @@ namespace MainForm
         public MainForm()
         {
             InitializeComponent();
+            // Create database file
+            bool dbExistance = File.Exists(GlobalConfig.SqliteDbPath());
+            if (!dbExistance)
+            {
+                foreach (IDataConnection db in GlobalConfig.Connections)
+                {
+                    db.CreateDb();
+                }
+                
+            }
         }
         /// <summary>
         /// Function to clear out UI

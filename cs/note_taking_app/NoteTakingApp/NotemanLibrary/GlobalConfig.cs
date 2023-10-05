@@ -23,10 +23,24 @@ namespace NotemanLibrary
                 Connections.Add( sql );
             }
         }
-
+        public static string SqliteDbPath()
+        {
+            string dbPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\NoteStorage.sqlite3";
+            return dbPath;
+        }
         public static string CnnString(string name)
         {
-            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+            if (name == "NoteStorage")
+            {
+                string dbPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\NoteStorage.sqlite3";
+                string sql = "Data Source=" + dbPath;
+                return sql;
+            }
+            else
+            {
+                string bs = "bullshit";
+                return bs;
+            }
         }
 
 

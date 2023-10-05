@@ -13,6 +13,15 @@ namespace NotemanLibrary.DataAccess
 {
     public class SQLiteConnector : IDataConnection
     {
+        public void CreateDb()
+        {
+            SQLiteConnection.CreateFile(GlobalConfig.SqliteDbPath());
+            using (IDbConnection connection = new SqliteConnection(GlobalConfig.CnnString("NoteStorage")))
+            {
+                connection.Execute("CREATE TABLE Notes (ID INTEGER NOT NULL UNIQUE, Title TEXT NOT NULL, Body TEXT NOT NULL, Date TEXT NOT NULL, PRIMARY KEY(ID AUTOINCREMENT))", commandType: CommandType.Text);
+                connection.Execute("CREATE TABLE Attachments (ID INTEGER NOT NULL UNIQUE, NoteID INTEGER NOT NULL, Name TEXT NOT NULL, AttachmentPath TEXT NOT NULL, FOREIGN KEY(NoteID) REFERENCES Notes(ID), PRIMARY KEY(ID AUTOINCREMENT))", commandType: CommandType.Text);
+            }
+        }
         /// <summary>
         /// Saves a note to the database.
         /// </summary>
