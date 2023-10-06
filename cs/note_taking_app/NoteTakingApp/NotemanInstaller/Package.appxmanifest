@@ -9,7 +9,7 @@
   <Identity
     Name="5f85f14a-eee2-4c6b-8fb2-b106b2102c92"
     Publisher="CN=Davorin Haberman"
-    Version="1.0.11.0" />
+    Version="1.0.13.0" />
 
   <Properties>
     <DisplayName>Noteman</DisplayName>
