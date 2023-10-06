@@ -1,0 +1,12 @@
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\bin\Debug\net6.0\NotemanLibrary.deps.json
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\bin\Debug\net6.0\NotemanLibrary.dll
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\bin\Debug\net6.0\NotemanLibrary.pdb
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\obj\Debug\net6.0\NotemanLibrary.csproj.AssemblyReference.cache
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\obj\Debug\net6.0\NotemanLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\obj\Debug\net6.0\NotemanLibrary.AssemblyInfoInputs.cache
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\obj\Debug\net6.0\NotemanLibrary.AssemblyInfo.cs
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\obj\Debug\net6.0\NotemanLibrary.csproj.CoreCompileInputs.cache
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\obj\Debug\net6.0\NotemanLibrary.dll
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\obj\Debug\net6.0\refint\NotemanLibrary.dll
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\obj\Debug\net6.0\NotemanLibrary.pdb
+C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\NotemanLibrary\obj\Debug\net6.0\ref\NotemanLibrary.dll
