@@ -67,7 +67,7 @@ namespace MainForm
                 {
                     db.UpdateNote(editModel);
 
-                    if (Attachments.SequenceEqual(OldAttachments))
+                    if (!Attachments.SequenceEqual(OldAttachments))
                     {
                         foreach (AttachmentModel attachment in OldAttachments)
                         {
@@ -122,6 +122,7 @@ namespace MainForm
         /// </summary>
         private void browseAttachButton_Click( object sender, EventArgs e )
         {
+            //File explorer to select file to add
             browseAttachDialog.InitialDirectory = "%USERPROFILE%";
             string path = "";
             if (browseAttachDialog.ShowDialog() == DialogResult.OK)
@@ -129,7 +130,32 @@ namespace MainForm
                 path = browseAttachDialog.FileName;
             }
             AttachmentModel attachment = new AttachmentModel(path);
-            Attachments.Add(attachment);
+
+            //Check for duplicates loop
+            bool duplicate = false;
+            foreach (AttachmentModel item in Attachments)
+            {
+                if (item.AttachmentPath == attachment.AttachmentPath)
+                {
+                    duplicate = true;
+                    MessageBox.Show("You have already added this file to your note.");
+                }
+            }
+
+            //Check if there is already 3 attachments
+            bool attachmentsMaximum = Attachments.Count > 2;
+            if (attachmentsMaximum)
+            {
+                MessageBox.Show("You can only add 3 files to a note.");
+            }
+
+            //Adds attachment to collection
+            if (!duplicate && !attachmentsMaximum )
+            {
+                Attachments.Add(attachment);
+            }
+
+            //Refresh the UI
             attachListBox.DataSource = null;
             attachListBox.DataSource = Attachments;
             attachListBox.DisplayMember = "Name";
