@@ -20,6 +20,7 @@ This is a practice repository while I'm learning to code and use Git (and GitHub
 ## Learning Series : Beginner Level
 * I have started a new series for myself today. I will be coding begginer level apps in order to raise my skill with C#. Wish me luck :smile: - Mar 06, 2023
 * So I took a little time off from coding because there were some things in life that I had to take care of. But no worries because I am back now :smile: - Apr, 2023/Oct, 2023
+* Finished my first beginner level app. I named it Noteman - The Note Taking App. As the name says this app is ment for taking simple notes and linking external files with those notes. The UI is build through Windows Forms and storage gets handled through SQLite local database. It took me a lot of time to finish this thing but I have to say that I learned a lot about many things that are needed to get an even simple app as this to work. It was my first for many things, first Windows Forms, first SQLite database, first time to link a database to C# programming etc. I'm really glad it came together as good as it did. Now on to the next app. What should I do next :thinking: - Oct 06, 2023
 
 Anyway, I'll keep you guys posted on how I progress through my learning journey.
 
