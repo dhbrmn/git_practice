@@ -21,7 +21,6 @@ C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\bin\Debug\
 C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\bin\Debug\net6.0-windows\NotemanLibrary.pdb
 C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\obj\Debug\net6.0-windows\MainForm.csproj.CopyComplete
 C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\bin\Debug\net6.0-windows\NoteStorage.sqlite3
-C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\bin\Debug\net6.0-windows\MainForm.dll.config
 C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\bin\Debug\net6.0-windows\Dapper.dll
 C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\bin\Debug\net6.0-windows\Microsoft.Data.Sqlite.dll
 C:\Users\davor\git_practice\cs\note_taking_app\NoteTakingApp\MainForm\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
