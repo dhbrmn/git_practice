@@ -76,7 +76,6 @@ namespace MainForm
         /// </summary>
         private void browseAttachButton_Click( object sender, EventArgs e )
         {
-            //File explorer to select file to add
             browseAttachDialog.InitialDirectory = "%USERPROFILE%";
             string path = "";
             if (browseAttachDialog.ShowDialog() == DialogResult.OK)
@@ -84,32 +83,7 @@ namespace MainForm
                 path = browseAttachDialog.FileName;
             }
             AttachmentModel attachment = new AttachmentModel(path);
-
-            //Check for duplicates loop
-            bool duplicate = false;
-            foreach (AttachmentModel item in Attachments)
-            {
-                if (item.AttachmentPath == attachment.AttachmentPath)
-                {
-                    duplicate = true;
-                    MessageBox.Show("You have already added this file to your note.");
-                }
-            }
-
-            //Check if there is already 3 attachments
-            bool attachmentsMaximum = Attachments.Count > 2;
-            if (attachmentsMaximum)
-            {
-                MessageBox.Show("You can only add 3 files to a note.");
-            }
-
-            //Adds attachment to collection
-            if (!duplicate && !attachmentsMaximum)
-            {
-                Attachments.Add(attachment);
-            }
-
-            //Reset UI
+            Attachments.Add(attachment);
             attachListBox.DataSource = null;
             attachListBox.DataSource = Attachments;
             attachListBox.DisplayMember = "Name";
