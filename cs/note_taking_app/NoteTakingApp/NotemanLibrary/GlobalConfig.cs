@@ -10,11 +10,17 @@ namespace NotemanLibrary
 {
     public static class GlobalConfig
     {
-//TODO - comment this out
+        /// <summary>
+        /// Opens a list of all different connections one could add
+        /// </summary>
         public static List<IDataConnection> Connections
         {
             get; private set;
         } = new List<IDataConnection>();
+        /// <summary>
+        /// Initializes the connection and preps the various connectors for databases
+        /// </summary>
+        /// <param name="database">Bool defines if a database is to be used</param>
         public static void InitializeConnections( bool database )
         {
             if (database)
@@ -23,28 +29,31 @@ namespace NotemanLibrary
                 Connections.Add( sql );
             }
         }
+        /// <summary>
+        /// Method for setting the database file location
+        /// </summary>
+        /// <returns>String of path the database file</returns>
         public static string SqliteDbPath()
         {
             string dbPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\NoteStorage.sqlite3";
             return dbPath;
         }
-//TODO - Change CnnString so it uses SqliteDbPath()
+        /// <summary>
+        /// Initializes various connection strings for multiple databases
+        /// </summary>
+        /// <param name="name">Databse name used to determine which connection string to output</param>
+        /// <returns>String of connection string needed to connect to the database</returns>
         public static string CnnString(string name)
         {
             if (name == "NoteStorage")
             {
-                string dbPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\NoteStorage.sqlite3";
-                string sql = "Data Source=" + dbPath;
+                string sql = "Data Source=" + SqliteDbPath();
                 return sql;
             }
-//TODO - write an exception
             else
             {
-                string bs = "bullshit";
-                return bs;
+                return "";       
             }
         }
-
-
     }
 }
