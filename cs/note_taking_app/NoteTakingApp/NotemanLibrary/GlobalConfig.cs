@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,7 @@ namespace NotemanLibrary
 {
     public static class GlobalConfig
     {
-
+//TODO - comment this out
         public static List<IDataConnection> Connections
         {
             get; private set;
@@ -28,6 +28,7 @@ namespace NotemanLibrary
             string dbPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\NoteStorage.sqlite3";
             return dbPath;
         }
+//TODO - Change CnnString so it uses SqliteDbPath()
         public static string CnnString(string name)
         {
             if (name == "NoteStorage")
@@ -36,6 +37,7 @@ namespace NotemanLibrary
                 string sql = "Data Source=" + dbPath;
                 return sql;
             }
+//TODO - write an exception
             else
             {
                 string bs = "bullshit";
